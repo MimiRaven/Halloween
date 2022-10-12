@@ -99,6 +99,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 646dc4e84edbda24192fd1f070d0282b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerControls:
+    m_Name: Player Controls
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 00934e0b-d3f7-4755-bba4-ec94a16bd159
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: WASD
+      m_Id: 8b650600-d0d3-427e-98a7-77f964a22957
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 6a5162b9-e0a3-4940-b0bc-0f313b703141
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 8
+    - m_Name: down
+      m_Id: 68d5ca64-8dec-45c8-9a20-2a76d26f7f81
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 8
+    - m_Name: left
+      m_Id: 002243ad-171f-4246-8502-b4b0e7448e21
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 8
+    - m_Name: right
+      m_Id: c9b13c49-c8d5-4b02-854f-578f8d23c0ca
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 8
+    - m_Name: 
+      m_Id: bda09e64-5e3f-46e0-b724-6587c9d33b77
+      m_Path: <Keyboard>/space
+      m_Interactions: Press
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 0
+    m_Flags: 0
   playerSprite: {fileID: 0}
 --- !u!61 &7003486669283130720
 BoxCollider2D:
