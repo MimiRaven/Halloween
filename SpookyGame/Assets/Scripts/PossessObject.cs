@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class PossessObject : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public BoxCollider2D boxCollider;
+
     void Start()
     {
-        
+        boxCollider.GetComponent<BoxCollider2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
+    }
+    public void disableCollider()
+    {
+        boxCollider.isTrigger = true;
+    }
+
+    public void enableCollider()
+    {
+        boxCollider.isTrigger = false;
     }
 }
