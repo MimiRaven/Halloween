@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4848775704113384138}
   - component: {fileID: 4285330584440766456}
-  - component: {fileID: 3496243380569876142}
+  - component: {fileID: 813301070994146300}
   - component: {fileID: 7003486669283130720}
   - component: {fileID: 9076011488880290146}
+  - component: {fileID: 6001082189695441350}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -55,7 +56,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -87,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3496243380569876142
+--- !u!114 &813301070994146300
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,67 +97,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4714337775084817740}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 646dc4e84edbda24192fd1f070d0282b, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e4e73039b9bfcd4a8000a9d8c3e9e65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerControls:
-    m_Name: Player Controls
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 00934e0b-d3f7-4755-bba4-ec94a16bd159
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: WASD
-      m_Id: 8b650600-d0d3-427e-98a7-77f964a22957
-      m_Path: 2DVector
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Player Controls
-      m_Flags: 4
-    - m_Name: up
-      m_Id: 6a5162b9-e0a3-4940-b0bc-0f313b703141
-      m_Path: <Keyboard>/w
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Player Controls
-      m_Flags: 8
-    - m_Name: down
-      m_Id: 68d5ca64-8dec-45c8-9a20-2a76d26f7f81
-      m_Path: <Keyboard>/s
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Player Controls
-      m_Flags: 8
-    - m_Name: left
-      m_Id: 002243ad-171f-4246-8502-b4b0e7448e21
-      m_Path: <Keyboard>/a
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Player Controls
-      m_Flags: 8
-    - m_Name: right
-      m_Id: c9b13c49-c8d5-4b02-854f-578f8d23c0ca
-      m_Path: <Keyboard>/d
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Player Controls
-      m_Flags: 8
-    - m_Name: 
-      m_Id: bda09e64-5e3f-46e0-b724-6587c9d33b77
-      m_Path: <Keyboard>/space
-      m_Interactions: Press
-      m_Processors: 
-      m_Groups: 
-      m_Action: Player Controls
-      m_Flags: 0
-    m_Flags: 0
-  playerSprite: {fileID: 0}
+  playerSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  speed: 5
 --- !u!61 &7003486669283130720
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -204,3 +149,41 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6001082189695441350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4714337775084817740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: a6bd39c227ac97b438a1becb6dcfda0c, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2aaecf0c-5c0c-464c-803e-b3e9ebbcec6f
+    m_ActionName: WASD/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8da9a462-628c-4f37-a7e4-7f995effe6da
+    m_ActionName: WASD/Possession[/Keyboard/space]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: WASD
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
