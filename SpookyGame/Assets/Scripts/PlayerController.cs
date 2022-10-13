@@ -11,7 +11,10 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb2d;
     public int speed = 5;
     GameObject possessObject;
+    GameObject possessLight;
     bool possessed;
+    bool lightPossessed;
+    bool enableMove = true;
 
     private void Awake()
     {
@@ -21,7 +24,10 @@ public class PlayerController : MonoBehaviour
 
     private void OnMovement(InputValue value) // These are Movement Keys
     {
-        movement = value.Get<Vector2>();
+        if (enableMove == true)
+        {
+            movement = value.Get<Vector2>();
+        }
     }
     private void OnPossession() // This IS the Space Key
     {
@@ -37,6 +43,27 @@ public class PlayerController : MonoBehaviour
         else if (possessed == true)
         {
             PossessedObjAction();
+        }
+
+        else if (lightPossessed == false && possessLight != null)
+        {
+            PossessLight l = possessLight.GetComponent<PossessLight>();
+            l.FlickerLightOn();
+
+            enableMove = false;
+            spriteRen.sprite = null;
+            lightPossessed = true;
+        }
+
+        else if (lightPossessed == true)
+        {
+            PossessLight l = possessLight.GetComponent<PossessLight>();
+            l.FlickerLightOff();
+
+            enableMove = true;
+            spriteRen.sprite = playerSprite;
+            lightPossessed = false;
+            possessLight = null;
         }
     }
 
@@ -56,6 +83,11 @@ public class PlayerController : MonoBehaviour
         {
             possessObject = collision.gameObject;
         }
+
+        if (collision.tag == "PossessLight")
+        {
+            possessLight = collision.gameObject;
+        }
     }
 
     void OnTriggerExit2D(Collider2D collision)
@@ -63,6 +95,11 @@ public class PlayerController : MonoBehaviour
         if (collision.tag == "CanPossess")
         {
             possessObject = null;
+        }
+
+        if (collision.tag == "PossessLight")
+        {
+            possessLight = null;
         }
     }
 

@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - CanPossess
+  - PossessLight
   layers:
   - Default
   - TransparentFX
