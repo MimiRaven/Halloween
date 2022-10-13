@@ -424,6 +424,62 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1766199084 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4714337775084817740, guid: f7413bfeef37c49459a334bc2a21d7b9, type: 3}
+  m_PrefabInstance: {fileID: 8891580855347078428}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1766199090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766199084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: a6bd39c227ac97b438a1becb6dcfda0c, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2aaecf0c-5c0c-464c-803e-b3e9ebbcec6f
+    m_ActionName: WASD/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8da9a462-628c-4f37-a7e4-7f995effe6da
+    m_ActionName: WASD/Possession[/Keyboard/space]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: WASD
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &1766199091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766199084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e4e73039b9bfcd4a8000a9d8c3e9e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
 --- !u!1001 &692313030595789700
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -509,6 +565,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3496243380569876142, guid: f7413bfeef37c49459a334bc2a21d7b9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3496243380569876142, guid: f7413bfeef37c49459a334bc2a21d7b9, type: 3}
       propertyPath: playerSprite
       value: 
       objectReference: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
@@ -570,6 +630,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9076011488880290146, guid: f7413bfeef37c49459a334bc2a21d7b9, type: 3}
       propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9076011488880290146, guid: f7413bfeef37c49459a334bc2a21d7b9, type: 3}
+      propertyPath: m_LinearDrag
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
