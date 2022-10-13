@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CanPossess
   - PossessLight
+  - NPC
   layers:
   - Default
   - TransparentFX

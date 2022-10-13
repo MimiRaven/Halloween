@@ -5,6 +5,7 @@ using UnityEngine.Rendering.Universal;
 public class PossessLight : MonoBehaviour
 {
     Light2D lightScript;
+    public GameObject scareRadius;
     void Start()
     {
         lightScript = GetComponent<Light2D>();
@@ -24,4 +25,5 @@ public class PossessLight : MonoBehaviour
     {
         lightScript.intensity = 1;
     }
+    
 }

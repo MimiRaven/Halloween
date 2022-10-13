@@ -5,6 +5,7 @@ using UnityEngine;
 public class PossessObject : MonoBehaviour
 {
     public BoxCollider2D boxCollider;
+    public GameObject scareRadius;
 
     void Start()
     {

@@ -48,6 +48,9 @@ public class PlayerController : MonoBehaviour
         else if (lightPossessed == false && possessLight != null)
         {
             PossessLight l = possessLight.GetComponent<PossessLight>();
+            ScareRadius s = l.scareRadius.GetComponent<ScareRadius>();
+            
+            s.ScareNPC();
             l.FlickerLightOn();
 
             enableMove = false;
@@ -58,6 +61,9 @@ public class PlayerController : MonoBehaviour
         else if (lightPossessed == true)
         {
             PossessLight l = possessLight.GetComponent<PossessLight>();
+            ScareRadius s = l.scareRadius.GetComponent<ScareRadius>();
+
+            s.ScareNPC();
             l.FlickerLightOff();
 
             enableMove = true;
@@ -110,8 +116,6 @@ public class PlayerController : MonoBehaviour
         Vector2 objPosition = objRb2d.position;
         possessObject.transform.parent = transform;
 
-        // objPosition.x = possessObject.transform.parent.position.x + speed * horizontal * Time.deltaTime;
-        // objPosition.y = possessObject.transform.parent.position.x + speed * horizontal * Time.deltaTime;
         objRb2d.MovePosition(position);
     }
 
@@ -119,6 +123,9 @@ public class PlayerController : MonoBehaviour
     {
         // Can implement functionality like throw object, flicker light, explode, etc... 
         PossessObject p = possessObject.GetComponent<PossessObject>();
+        ScareRadius s = p.scareRadius.GetComponent<ScareRadius>();
+
+        s.ScareNPC();
         p.enableCollider();
 
         spriteRen.sprite = playerSprite;
