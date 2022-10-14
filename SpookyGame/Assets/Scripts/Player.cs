@@ -13,12 +13,6 @@ public class Player : MonoBehaviour
     GameObject possessObject;
     bool possessed;
 
-    void Start()
-    {
-        rb2d = GetComponent<Rigidbody2D>();
-        spriteRen = GetComponent<SpriteRenderer>();
-    }
-
     void Update()
     {
         Vector2 position = rb2d.position;
@@ -45,6 +39,7 @@ public class Player : MonoBehaviour
             }
         }
     }
+
 
     void FixedUpdate()
     {

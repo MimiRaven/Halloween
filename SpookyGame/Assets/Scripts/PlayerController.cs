@@ -16,10 +16,43 @@ public class PlayerController : MonoBehaviour
     bool lightPossessed;
     bool enableMove = true;
 
+    private PlayerInput playerInput;
+    private InputAction InteractAction;
+
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
         spriteRen = GetComponent<SpriteRenderer>();
+        playerInput = GetComponent<PlayerInput>();
+        InteractAction = playerInput.actions["Interact"];
+    }
+
+    private void OnEnable()
+    {
+        InteractAction.performed +=_=> possessedStart();
+        InteractAction.canceled +=_=> possessedStop();
+    }
+
+    private void OnDisable()
+    {
+        InteractAction.performed -=_=> possessedStart();
+        InteractAction.canceled -=_=> possessedStop();
+    }
+
+    public void possessedStart()
+    {
+        possessed = true;
+        spriteRen.sprite = null;
+        PossessObject p = possessObject.GetComponent<PossessObject>();
+        p.disableCollider();
+        PossessedObjMovement();
+
+    }
+
+    public void possessedStop()
+    {
+        possessed = false;
+        PossessedObjAction();
     }
 
     private void OnMovement(InputValue value) // These are Movement Keys
@@ -35,7 +68,7 @@ public class PlayerController : MonoBehaviour
         {
             PossessObject p = possessObject.GetComponent<PossessObject>();
             p.disableCollider();
-
+        
             spriteRen.sprite = null;
             possessed = true;
         }
@@ -45,11 +78,12 @@ public class PlayerController : MonoBehaviour
             PossessedObjAction();
         }
 
-        else if (lightPossessed == false && possessLight != null)
+
+        if (lightPossessed == false && possessLight != null)
         {
             PossessLight l = possessLight.GetComponent<PossessLight>();
             ScareRadius s = l.scareRadius.GetComponent<ScareRadius>();
-            
+
             s.ScareNPC();
             l.FlickerLightOn();
 
@@ -73,63 +107,64 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-        rb2d.MovePosition(rb2d.position + movement * speed * Time.fixedDeltaTime);
 
-        if (possessed == true)
-        {
-            PossessedObjMovement();
+            private void FixedUpdate()
+            {
+                rb2d.MovePosition(rb2d.position + movement * speed * Time.fixedDeltaTime);
+
+                if (possessed == true)
+                {
+                    PossessedObjMovement();
+                }
+            }
+
+            void OnTriggerEnter2D(Collider2D collision)
+            {
+                if (collision.tag == "CanPossess")
+                {
+                    possessObject = collision.gameObject;
+                }
+
+                if (collision.tag == "PossessLight")
+                {
+                    possessLight = collision.gameObject;
+                }
+            }
+
+            void OnTriggerExit2D(Collider2D collision)
+            {
+                if (collision.tag == "CanPossess")
+                {
+                    possessObject = null;
+                }
+
+                if (collision.tag == "PossessLight")
+                {
+                    possessLight = null;
+                }
+            }
+
+            void PossessedObjMovement()
+            {
+                Vector2 position = rb2d.position;
+                Rigidbody2D objRb2d = possessObject.GetComponent<Rigidbody2D>();
+                Vector2 objPosition = objRb2d.position;
+                possessObject.transform.parent = transform;
+
+                objRb2d.MovePosition(position);
+            }
+
+            void PossessedObjAction()
+            {
+                // Can implement functionality like throw object, flicker light, explode, etc... 
+                PossessObject p = possessObject.GetComponent<PossessObject>();
+                ScareRadius s = p.scareRadius.GetComponent<ScareRadius>();
+
+                s.ScareNPC();
+                p.enableCollider();
+
+                spriteRen.sprite = playerSprite;
+                possessed = false;
+                possessObject = null;
+            }
         }
-    }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "CanPossess")
-        {
-            possessObject = collision.gameObject;
-        }
-
-        if (collision.tag == "PossessLight")
-        {
-            possessLight = collision.gameObject;
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag == "CanPossess")
-        {
-            possessObject = null;
-        }
-
-        if (collision.tag == "PossessLight")
-        {
-            possessLight = null;
-        }
-    }
-
-    void PossessedObjMovement()
-    {
-        Vector2 position = rb2d.position;
-        Rigidbody2D objRb2d = possessObject.GetComponent<Rigidbody2D>();
-        Vector2 objPosition = objRb2d.position;
-        possessObject.transform.parent = transform;
-
-        objRb2d.MovePosition(position);
-    }
-
-    void PossessedObjAction()
-    {
-        // Can implement functionality like throw object, flicker light, explode, etc... 
-        PossessObject p = possessObject.GetComponent<PossessObject>();
-        ScareRadius s = p.scareRadius.GetComponent<ScareRadius>();
-
-        s.ScareNPC();
-        p.enableCollider();
-
-        spriteRen.sprite = playerSprite;
-        possessed = false;
-        possessObject = null;
-    }
-}

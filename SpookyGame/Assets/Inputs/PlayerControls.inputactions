@@ -15,7 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Possession",
+                    "name": "Interact",
                     "type": "Button",
                     "id": "8da9a462-628c-4f37-a7e4-7f995effe6da",
                     "expectedControlType": "Button",
@@ -98,7 +98,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Possession",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c499cb80-6a64-455b-81da-a94e74c5e348",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
