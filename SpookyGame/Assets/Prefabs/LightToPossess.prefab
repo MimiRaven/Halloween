@@ -99,10 +99,10 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 204.96
-  m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 2.4717796
-  m_PointLightOuterRadius: 8.699928
+  m_PointLightInnerAngle: 62.63
+  m_PointLightOuterAngle: 171.99
+  m_PointLightInnerRadius: 2.718653
+  m_PointLightOuterRadius: 7.570953
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -165,19 +165,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7272682749219898644, guid: d12abf0325d5cc34a83a5aedd24a1d3e, type: 3}
       propertyPath: m_Size.x
-      value: 9.930382
+      value: 10.334724
       objectReference: {fileID: 0}
     - target: {fileID: 7272682749219898644, guid: d12abf0325d5cc34a83a5aedd24a1d3e, type: 3}
       propertyPath: m_Size.y
-      value: 7.681313
+      value: 6.1043773
       objectReference: {fileID: 0}
     - target: {fileID: 7272682749219898644, guid: d12abf0325d5cc34a83a5aedd24a1d3e, type: 3}
       propertyPath: m_Offset.x
-      value: -0.8339853
+      value: -0.631814
       objectReference: {fileID: 0}
     - target: {fileID: 7272682749219898644, guid: d12abf0325d5cc34a83a5aedd24a1d3e, type: 3}
       propertyPath: m_Offset.y
-      value: 0.44201398
+      value: 4.0608788
       objectReference: {fileID: 0}
     - target: {fileID: 8632177389747525892, guid: d12abf0325d5cc34a83a5aedd24a1d3e, type: 3}
       propertyPath: m_RootOrder
@@ -185,11 +185,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8632177389747525892, guid: d12abf0325d5cc34a83a5aedd24a1d3e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.6277598
+      value: 0.39
       objectReference: {fileID: 0}
     - target: {fileID: 8632177389747525892, guid: d12abf0325d5cc34a83a5aedd24a1d3e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.2346206
+      value: -0.83
       objectReference: {fileID: 0}
     - target: {fileID: 8632177389747525892, guid: d12abf0325d5cc34a83a5aedd24a1d3e, type: 3}
       propertyPath: m_LocalPosition.z

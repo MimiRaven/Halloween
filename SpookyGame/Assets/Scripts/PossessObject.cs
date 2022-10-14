@@ -17,13 +17,14 @@ public class PossessObject : MonoBehaviour
     {
         
     }
-    public void disableCollider()
+
+    public void DisableCollider()
     {
-        boxCollider.isTrigger = true;
+        boxCollider.enabled = false;
     }
 
-    public void enableCollider()
+    public void EnableCollider()
     {
-        boxCollider.isTrigger = false;
+        boxCollider.enabled = true;
     }
 }
