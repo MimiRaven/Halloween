@@ -5,7 +5,7 @@ using UnityEngine;
 public class ScareRadius : MonoBehaviour
 {
     GameObject npc;
-    float scareValue = 10;
+    public float scareValue = 10;
 
     void OnTriggerEnter2D(Collider2D other)
     {
