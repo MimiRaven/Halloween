@@ -10,9 +10,9 @@ public class PlayerController : MonoBehaviour
     private Vector2 movement;
     private Rigidbody2D rb2d;
     public int speed = 5;
-    GameObject possessObject;
+    public GameObject possessObject;
     GameObject possessLight;
-    bool possessed;
+    public bool possessed;
     bool lightPossessed;
     bool enableMove = true;
 
