@@ -6,17 +6,18 @@ using UnityEngine.AI;
 public class NPC : MonoBehaviour
 {
     public float scareMeter;
-    public float successLimit = 50;
+    public float successLimit = 10;
     public float failedLimit = 100;
 
     public NavMeshAgent agent;
     public GameObject point1;
     public GameObject point2;
+    public GameObject gameManager;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        agent.SetDestination(point2.transform.position);
+        // agent.SetDestination(point2.transform.position);
         agent.updateRotation = false;
         agent.updateUpAxis = false;
     }
@@ -39,9 +40,12 @@ public class NPC : MonoBehaviour
         
         if (scareMeter == successLimit)
         {
+            GameManager g = gameManager.GetComponent<GameManager>();
+
             Debug.Log("success");
             transform.eulerAngles = Vector3.forward * 90;
             agent.isStopped = true;
+            g.Scared();
         }
 
         if (scareMeter == failedLimit)

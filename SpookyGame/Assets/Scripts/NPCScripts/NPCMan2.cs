@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class NPCWoman : NPC
+public class NPCMan2 : NPC
 {
     // public float scareMeter;
     // public float successLimit = 50;

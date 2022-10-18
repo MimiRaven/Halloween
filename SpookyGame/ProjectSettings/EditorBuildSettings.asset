@@ -20,4 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: 71d802960f181d7408d8255b492dd5d9
+  - enabled: 1
+    path: Assets/Scenes/Level1Scene.unity
+    guid: a13048d0fe2d87f49a48534d31deb63c
+  - enabled: 1
+    path: Assets/Scenes/Win Screen.unity
+    guid: 824bb1c6980b744499124042ab9be1e8
+  - enabled: 1
+    path: Assets/Scenes/Lose Screen.unity
+    guid: bca03959c52503a4d8d20522b57b5030
   m_configObjects: {}
