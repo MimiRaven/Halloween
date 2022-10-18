@@ -20,8 +20,12 @@ public class PlayerController : MonoBehaviour
     private PlayerInput playerInput;
     private InputAction InteractAction;
 
+    public GameObject Pause;
+    private bool paused = false;
+
     private void Awake()
     {
+        Time.timeScale = 1;
         rb2d = GetComponent<Rigidbody2D>();
         spriteRen = GetComponent<SpriteRenderer>();
         playerInput = GetComponent<PlayerInput>();
@@ -31,6 +35,30 @@ public class PlayerController : MonoBehaviour
     private void OnMovement(InputValue value) // These are Movement Keys
     {
         movement = value.Get<Vector2>();
+    }
+
+    private void OnPauseMenu()
+    {
+        if (paused == false)
+        {
+            Pause.SetActive(true);
+            paused = true;
+            Time.timeScale = 0;
+        }
+
+        else if (paused == true)
+        {
+            Pause.SetActive(false);
+            paused = false;
+            Time.timeScale = 1;
+        }
+    }
+
+    private void OnResume()
+    {
+        Pause.SetActive(false);
+        paused = false;
+        Time.timeScale = 1;
     }
 
     private void OnInteract() // This IS the Space and A Button

@@ -30,6 +30,7 @@ public class ScareRadius : MonoBehaviour
             NPC n = npc.GetComponent<NPC>();
 
             n.IncreaseScare(scareValue);
+            Debug.Log(npc);
         }
     }
 }
