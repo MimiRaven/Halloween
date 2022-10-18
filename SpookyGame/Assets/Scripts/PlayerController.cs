@@ -12,9 +12,10 @@ public class PlayerController : MonoBehaviour
     public int speed = 5;
     public GameObject possessObject;
     GameObject possessLight;
-    public bool possessed;
+    bool possessed;
     bool lightPossessed;
     bool enableMove = true;
+    bool possessing;
 
     private PlayerInput playerInput;
     private InputAction InteractAction;
@@ -75,7 +76,7 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "CanPossess")
+        if (collision.tag == "CanPossess" && possessing == false)
         {
             possessObject = collision.gameObject;
         }
@@ -88,7 +89,7 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "CanPossess")
+        if (collision.tag == "CanPossess" && possessing == false)
         {
             possessObject = null;
         }
@@ -107,6 +108,7 @@ public class PlayerController : MonoBehaviour
 
         possessObject.transform.parent = transform;
 
+        possessing = true;
         objRb2d.MovePosition(position);
     }
 
@@ -119,7 +121,9 @@ public class PlayerController : MonoBehaviour
         s.ScareNPC();
         p.EnableCollider();
 
+
         spriteRen.sprite = playerSprite;
+        possessing = false;
         possessed = false;
         possessObject = null;
     }
