@@ -28,4 +28,9 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene("Win Screen");
         }
     }
+
+    public void YouLose()
+    {
+        SceneManager.LoadScene("Lose Screen");
+    }
 }

@@ -9,7 +9,7 @@ public class Timer : MonoBehaviour
     public float timeValue = 180;
     public TextMeshProUGUI timeText;
 
-
+    public GameObject gameManager;
     void Start()
     {
         TimerOn = true;
@@ -18,16 +18,18 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GameManager g = gameManager.GetComponent<GameManager>();
+        
         DisplayTime(timeValue);
         if (timeValue > 0)
         {
             timeValue -= Time.deltaTime;
-
         }
         else
         {
             timeValue = 0;
             TimerOn = false;
+            g.YouLose();
         }
     }
 
