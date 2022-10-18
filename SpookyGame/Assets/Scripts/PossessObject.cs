@@ -10,7 +10,7 @@ public class PossessObject : MonoBehaviour
 
     void Start()
     {
-        boxCollider.GetComponent<BoxCollider2D>();
+        //boxCollider.GetComponent<BoxCollider2D>();
     }
 
     void Update()
@@ -20,11 +20,11 @@ public class PossessObject : MonoBehaviour
 
     public void DisableCollider()
     {
-        boxCollider.enabled = false;
+        //boxCollider.enabled = false;
     }
 
     public void EnableCollider()
     {
-        boxCollider.enabled = true;
+        //boxCollider.enabled = true;
     }
 }
