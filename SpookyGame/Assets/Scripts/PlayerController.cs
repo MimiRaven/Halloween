@@ -102,14 +102,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.tag == "CanPossess" && possessing == false)
         {
             possessObject = collision.gameObject;
         }
 
-        if (collision.tag == "PossessLight")
+        if (collision.tag == "PossessLight" && possessing == false)
         {
             possessLight = collision.gameObject;
         }
@@ -165,7 +165,7 @@ public class PlayerController : MonoBehaviour
         s.ScareNPC();
         l.FlickerLightOn();
 
-        
+        possessing = true;
         spriteRen.sprite = null;
         lightPossessed = true;
     }
@@ -179,6 +179,7 @@ public class PlayerController : MonoBehaviour
         s.ScareNPC();
         l.FlickerLightOff();
 
+        possessing = false;
         spriteRen.sprite = playerSprite;
         lightPossessed = false;
         possessLight = null;
