@@ -7,7 +7,7 @@ public class ScareRadius : MonoBehaviour
     GameObject npc;
     public float scareValue = 10;
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
         if (other.tag == "NPC")
         {
@@ -30,7 +30,6 @@ public class ScareRadius : MonoBehaviour
             NPC n = npc.GetComponent<NPC>();
 
             n.IncreaseScare(scareValue);
-            Debug.Log(npc);
         }
     }
 }

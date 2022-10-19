@@ -9,10 +9,15 @@ public class NPC : MonoBehaviour
     public float successLimit = 10;
     public float failedLimit = 100;
 
+    bool canScare = true;
     public NavMeshAgent agent;
     public GameObject point1;
     public GameObject point2;
     public GameObject gameManager;
+
+    public SpriteRenderer ren;
+    public Color startColor = Color.blue;
+    public Color endColor = Color.white;
 
     void Start()
     {
@@ -20,6 +25,7 @@ public class NPC : MonoBehaviour
         // agent.SetDestination(point2.transform.position);
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        ren = GetComponent<SpriteRenderer>();
     }
 
 
@@ -36,23 +42,40 @@ public class NPC : MonoBehaviour
     public void IncreaseScare(float x)
     {
         scareMeter += x;
-        scareMeter = Mathf.Clamp(scareMeter, 0f, failedLimit);
         
-        if (scareMeter == successLimit)
+        if (canScare == true)
+        {
+            LerpColor();    
+        }
+        
+        if (scareMeter == successLimit && canScare == true)
+        {
+            GameManager g = gameManager.GetComponent<GameManager>();
+   
+            g.Scared(30);
+        }
+
+        if (scareMeter >= failedLimit && canScare == true)
         {
             GameManager g = gameManager.GetComponent<GameManager>();
 
-            Debug.Log("success");
-            transform.eulerAngles = Vector3.forward * 90;
             agent.isStopped = true;
-            g.Scared();
-        }
-
-        if (scareMeter == failedLimit)
-        {
-            Debug.Log("fail");
+            transform.eulerAngles = Vector3.forward * 90;
+            canScare = false;
+            g.Scared(-30);
         }
 
         Debug.Log("NPC scare meter: " +scareMeter);
+    }
+
+    public void LerpColor()
+    {
+        ren.color = startColor;
+        Invoke("ReturnColor", 1f);
+    }
+
+    public void ReturnColor()
+    {
+        ren.color = endColor;
     }
 }
