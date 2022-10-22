@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     public GameObject Pause;
     private bool paused = false;
 
+    public GameObject theRoom;
+
     private void Awake()
     {
         Time.timeScale = 1;
@@ -115,6 +117,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Room")
+        {
+            theRoom = collision.gameObject;
+        }
+    }
+
     void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "CanPossess" && possessing == false)
@@ -125,6 +135,11 @@ public class PlayerController : MonoBehaviour
         if (collision.tag == "PossessLight")
         {
             possessLight = null;
+        }
+        
+        if (collision.tag == "Room" && possessing == true)
+        {
+            transform.position = collision.gameObject.transform.position;
         }
     }
 
@@ -154,6 +169,7 @@ public class PlayerController : MonoBehaviour
         possessing = false;
         possessed = false;
         possessObject = null;
+        theRoom = null;
     }
 
     void LightPossessedObjFlickerOff()
