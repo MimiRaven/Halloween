@@ -21,7 +21,7 @@ public class NPC : MonoBehaviour
 
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
+        // agent = GetComponent<NavMeshAgent>();
         // agent.SetDestination(point2.transform.position);
         agent.updateRotation = false;
         agent.updateUpAxis = false;

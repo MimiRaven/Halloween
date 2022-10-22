@@ -15,16 +15,25 @@ public class NPCMan : NPC
 
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
- 
+        // agent = GetComponent<NavMeshAgent>();
+        agent.SetDestination(point2.transform.position);
         agent.updateRotation = false;
         agent.updateUpAxis = false;
     }
 
-
     void Update()
     {
-        
+        if (Mathf.Approximately(transform.position.x, point2.transform.position.x))
+        {
+            //Debug.Log("new");
+            agent.SetDestination(point1.transform.position);
+        }
+
+        if (Mathf.Approximately(transform.position.x, point1.transform.position.x))
+        {
+            //Debug.Log("complete");
+            agent.SetDestination(point2.transform.position);
+        }
     }
 
     private void FixedUpdate()
