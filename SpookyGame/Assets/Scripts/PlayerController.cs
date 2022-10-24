@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
 
     private PlayerInput playerInput;
     private InputAction InteractAction;
+    private InputAction WhisperAction;
 
     public GameObject Pause;
     private bool paused = false;
@@ -32,6 +33,7 @@ public class PlayerController : MonoBehaviour
         spriteRen = GetComponent<SpriteRenderer>();
         playerInput = GetComponent<PlayerInput>();
         InteractAction = playerInput.actions["Interact"];
+        WhisperAction = playerInput.actions["Whisper"];
     }
 
     private void OnMovement(InputValue value) // These are Movement Keys
@@ -89,6 +91,11 @@ public class PlayerController : MonoBehaviour
         {
             LightPossessedObjFlickerOn();
         }
+    }
+
+    private void OnWhisper()
+    {
+
     }
 
     void FixedUpdate()
