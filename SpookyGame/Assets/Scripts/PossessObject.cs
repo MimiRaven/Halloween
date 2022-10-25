@@ -8,8 +8,11 @@ public class PossessObject : MonoBehaviour
     public BoxCollider2D boxCollider;
     public GameObject scareRadius;
     GameObject player;
+
+    public GameObject flickerParticles;
     void Start()
     {
+        flickerParticles.SetActive(false);
         //boxCollider.GetComponent<BoxCollider2D>();
         player = GameObject.FindWithTag("Player");
     }
@@ -19,12 +22,13 @@ public class PossessObject : MonoBehaviour
         Physics2D.IgnoreCollision(player.gameObject.GetComponent<BoxCollider2D>(), boxCollider);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    public void OnParticles()
     {
-        if (collision.gameObject.tag == "Player")
-        {
-
-        }
+        flickerParticles.SetActive(true);
+    }
+    public void OffParticles()
+    {
+        flickerParticles.SetActive(false);
     }
 
     public void DisableCollider()

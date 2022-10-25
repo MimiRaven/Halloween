@@ -147,12 +147,18 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.tag == "CanPossess" && possessing == false)
         {
+            PossessObject p = collision.GetComponent<PossessObject>();
             possessObject = collision.gameObject;
+
+            p.OnParticles();
         }
 
         if (collision.tag == "PossessLight" && possessing == false)
         {
+            PossessLight l = collision.GetComponent<PossessLight>();
             possessLight = collision.gameObject;
+
+            l.ParticlesOn();
         }
     }
 
@@ -168,11 +174,17 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.tag == "CanPossess" && possessing == false)
         {
+            PossessObject p = collision.GetComponent<PossessObject>();
+            p.OffParticles();
+
             possessObject = null;
         }
 
         if (collision.tag == "PossessLight")
         {
+            PossessLight l = collision.GetComponent<PossessLight>();
+            l.ParticlesOff();
+            
             possessLight = null;
         }
         

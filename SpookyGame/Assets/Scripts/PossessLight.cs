@@ -6,14 +6,26 @@ public class PossessLight : MonoBehaviour
 {
     Light2D lightScript;
     public GameObject scareRadius;
+    public GameObject lightParticles;
     void Start()
     {
+        lightParticles.SetActive(false);
         lightScript = GetComponent<Light2D>();
     }
 
     void Update()
     {
 
+    }
+
+    public void ParticlesOn()
+    {
+        lightParticles.SetActive(true);
+    }
+
+    public void ParticlesOff()
+    {
+        lightParticles.SetActive(false);
     }
 
     public void FlickerLightOn()
