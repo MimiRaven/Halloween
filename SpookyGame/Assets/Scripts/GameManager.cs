@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 {
     public int totalScares;
     public int endGameTotal = 12;
-    public int score;
+    public float score;
     public int winTotal = 300;
     public TextMeshProUGUI scoreText;
     // Start is called before the first frame update
@@ -24,11 +24,9 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void Scared(int x)
+    public void Scared(int x) 
     {
-        totalScares += 1;
-        score += x;
-        scoreText.text = "" + score.ToString();
+        totalScares += x;
 
         if (totalScares == endGameTotal && score == winTotal)
         {
@@ -39,6 +37,12 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene("Lose Screen");
         }
+    }
+
+    public void ScareScore(float x)
+    {
+        score += x;
+        scoreText.text = "" + score.ToString();
     }
 
     public void YouLose()
