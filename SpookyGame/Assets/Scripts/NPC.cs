@@ -16,6 +16,7 @@ public class NPC : MonoBehaviour
     public SpriteRenderer ren;
     public Color startColor = Color.blue;
     public Color endColor = Color.white;
+    public Color nearDeath = new Color (255, 117, 117);
 
     public enum NPCState {notScared, successScared, failScared }
     public NPCState npcState;
@@ -44,11 +45,16 @@ public class NPC : MonoBehaviour
     {
         GameManager g = gameManager.GetComponent<GameManager>();
         scareMeter += x;
-        g.ScareScore(x);
 
         if (canScare == true)
         {
+            g.ScareScore(x);
             LerpColor();    
+        }
+
+        if (scareMeter >= failedLimit - 9 && canScare == true)
+        {
+            ren.color = nearDeath;
         }
 
         if (scareMeter == successLimit && canScare == true)
@@ -63,6 +69,7 @@ public class NPC : MonoBehaviour
             transform.eulerAngles = Vector3.forward * 90;
             canScare = false;
 
+            g.ScareScore(-scareMeter);
             NPCStates();
             npcState = NPCState.failScared;
         }
@@ -81,12 +88,10 @@ public class NPC : MonoBehaviour
                 break;
 
             case NPCState.successScared:
-                
                 break;
 
             case NPCState.failScared:
                 g.Scared(-1);
-                g.ScareScore(-scareMeter);
                 break;
             
         }
