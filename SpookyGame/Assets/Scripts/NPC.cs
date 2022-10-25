@@ -73,8 +73,6 @@ public class NPC : MonoBehaviour
             NPCStates();
             npcState = NPCState.failScared;
         }
-
-        Debug.Log("NPC scare meter: " +scareMeter);
     }
 
     public void NPCStates()

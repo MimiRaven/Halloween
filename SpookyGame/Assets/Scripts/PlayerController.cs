@@ -26,6 +26,12 @@ public class PlayerController : MonoBehaviour
 
     public GameObject theRoom;
 
+    float possessTimer = 3f;
+    bool possessCooldown;
+
+    float lightPossessTimer = 3f;
+    bool lightPossessCooldown;
+
     private void Awake()
     {
         Time.timeScale = 1;
@@ -67,7 +73,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnInteract() // This IS the Space and A Button
     {
-        if (possessed == false && possessObject != null)
+        if (possessed == false && possessObject != null && possessCooldown == false)
         {
             PossessObject p = possessObject.GetComponent<PossessObject>();
             p.DisableCollider();
@@ -79,23 +85,49 @@ public class PlayerController : MonoBehaviour
         else if (possessed == true)
         {
             PossessedObjAction();
+            possessCooldown = true;
         }
 
 
-        if (lightPossessed == false && possessLight != null)
+        if (lightPossessed == false && possessLight != null && lightPossessCooldown == false)
         {
+            Debug.Log(lightPossessCooldown);
             LightPossessedObjFlickerOff();
         }
 
         else if (lightPossessed == true)
         {
             LightPossessedObjFlickerOn();
+            lightPossessCooldown = true;
         }
     }
 
     private void OnWhisper()
     {
 
+    }
+
+    void Update()
+    {
+        if (possessCooldown == true)
+        {
+            possessTimer -= Time.deltaTime;
+            if (possessTimer <= 0)
+            {
+                possessCooldown = false;
+                possessTimer = 3f;
+            }
+        }
+
+        if (lightPossessCooldown == true)
+        {
+            lightPossessTimer -= Time.deltaTime;
+            if (lightPossessTimer <= 0)
+            {
+                lightPossessCooldown = false;
+                lightPossessTimer = 3f;
+            }
+        }
     }
 
     void FixedUpdate()
