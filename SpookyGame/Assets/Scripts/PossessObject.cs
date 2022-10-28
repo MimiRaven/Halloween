@@ -8,13 +8,14 @@ public class PossessObject : MonoBehaviour
     public BoxCollider2D boxCollider;
     public GameObject scareRadius;
     GameObject player;
-
+    public SpriteRenderer posRen;
     public GameObject flickerParticles;
+
     void Start()
     {
         flickerParticles.SetActive(false);
-        //boxCollider.GetComponent<BoxCollider2D>();
         player = GameObject.FindWithTag("Player");
+        posRen = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -29,15 +30,5 @@ public class PossessObject : MonoBehaviour
     public void OffParticles()
     {
         flickerParticles.SetActive(false);
-    }
-
-    public void DisableCollider()
-    {
-        //boxCollider.enabled = false;
-    }
-
-    public void EnableCollider()
-    {
-        //boxCollider.enabled = true;
     }
 }

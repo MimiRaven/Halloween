@@ -7,7 +7,8 @@ using UnityEngine.Audio;
 public class PlayerController : MonoBehaviour
 {
     SpriteRenderer spriteRen;
-    public Sprite playerSprite;
+    Color blankColor = Color.white;
+
     public AudioSource playSound;
     private Vector2 movement;
     private Rigidbody2D rb2d;
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour
     float lightPossessTimer = 3f;
     bool lightPossessCooldown;
 
+
     private void Awake()
     {
         Time.timeScale = 1;
@@ -42,6 +44,7 @@ public class PlayerController : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         InteractAction = playerInput.actions["Interact"];
         WhisperAction = playerInput.actions["Whisper"];
+        spriteRen.color = blankColor;
     }
 
     private void OnMovement(InputValue value) // These are Movement Keys
@@ -78,9 +81,10 @@ public class PlayerController : MonoBehaviour
         if (possessed == false && possessObject != null && possessCooldown == false)
         {
             PossessObject p = possessObject.GetComponent<PossessObject>();
-            p.DisableCollider();
-        
-            spriteRen.sprite = null;
+
+            p.posRen.sortingOrder = 10;
+            blankColor.a = 0;
+            spriteRen.color = blankColor;
             possessed = true;
         }
 
@@ -208,7 +212,7 @@ public class PlayerController : MonoBehaviour
         Vector2 objPosition = objRb2d.position;
 
         possessObject.transform.parent = transform;
-
+        
         possessing = true;
         objRb2d.MovePosition(position);
     }
@@ -220,10 +224,10 @@ public class PlayerController : MonoBehaviour
         ScareRadius s = p.scareRadius.GetComponent<ScareRadius>();
 
         s.ScareNPC();
-        p.EnableCollider();
 
-
-        spriteRen.sprite = playerSprite;
+        p.posRen.sortingOrder = 2;
+        blankColor.a = 1;
+        spriteRen.color = blankColor;
         possessing = false;
         possessed = false;
         possessObject = null;
@@ -240,7 +244,8 @@ public class PlayerController : MonoBehaviour
         l.FlickerLightOn();
 
         possessing = true;
-        spriteRen.sprite = null;
+        blankColor.a = 0;
+        spriteRen.color = blankColor;
         lightPossessed = true;
     }
 
@@ -254,7 +259,8 @@ public class PlayerController : MonoBehaviour
         l.FlickerLightOff();
 
         possessing = false;
-        spriteRen.sprite = playerSprite;
+        blankColor.a = 1;
+        spriteRen.color = blankColor;
         lightPossessed = false;
         possessLight = null;
     }
