@@ -126,6 +126,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scareRadius: {fileID: 206580597343511121}
+  lightParticles: {fileID: 1297746915273222220, guid: 843d863fdcc6bbb45bbb08e4ab395623, type: 3}
+  lightOn: {fileID: 0}
+  lightOff: {fileID: 0}
 --- !u!61 &6781390147867783538
 BoxCollider2D:
   m_ObjectHideFlags: 0

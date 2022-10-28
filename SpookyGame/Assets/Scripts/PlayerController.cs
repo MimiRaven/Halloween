@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Audio;
 
 public class PlayerController : MonoBehaviour
 {
     SpriteRenderer spriteRen;
     public Sprite playerSprite;
+    public AudioSource playSound;
     private Vector2 movement;
     private Rigidbody2D rb2d;
     public int speed = 5;
@@ -104,7 +106,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnWhisper()
     {
-
+        playSound.Play();
     }
 
     void Update()
@@ -167,6 +169,11 @@ public class PlayerController : MonoBehaviour
         if (collision.tag == "Room")
         {
             theRoom = collision.gameObject;
+        }
+
+        if (collision.gameObject.CompareTag("NPC"))
+        {
+            OnWhisper();
         }
     }
 

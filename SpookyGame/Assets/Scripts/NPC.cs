@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Audio;
 
 public class NPC : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class NPC : MonoBehaviour
     public GameObject point2;
     public GameObject gameManager;
     public SpriteRenderer ren;
+    public AudioSource playSound;
     public Color startColor = Color.blue;
     public Color endColor = Color.white;
     public Color nearDeath = new Color (255, 117, 117);
@@ -49,7 +51,8 @@ public class NPC : MonoBehaviour
         if (canScare == true)
         {
             g.ScareScore(x);
-            LerpColor();    
+            LerpColor();
+            playSound.Play();
         }
 
         if (scareMeter >= failedLimit - 9 && canScare == true)
