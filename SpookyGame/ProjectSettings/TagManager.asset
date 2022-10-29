@@ -8,6 +8,7 @@ TagManager:
   - PossessLight
   - NPC
   - Room
+  - GameManager
   layers:
   - Default
   - TransparentFX

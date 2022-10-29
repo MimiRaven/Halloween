@@ -16,25 +16,26 @@ public class NPCWoman2 : NPC
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        agent.SetDestination(point2.transform.position);
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        
+        // agent.SetDestination(point2.transform.position);
     }
 
 
     void Update()
     {
-        if (Mathf.Approximately(transform.position.x, point2.transform.position.x))
-        {
-            agent.SetDestination(point1.transform.position);
-            //Debug.Log("new");
-        }
+        // if (Mathf.Approximately(transform.position.x, point2.transform.position.x))
+        // {
+        //     agent.SetDestination(point1.transform.position);
+        //     //Debug.Log("new");
+        // }
 
-        if (Mathf.Approximately(transform.position.x, point1.transform.position.x))
-        {
-            //Debug.Log("complete");
-            agent.SetDestination(point2.transform.position);
-        }
+        // if (Mathf.Approximately(transform.position.x, point1.transform.position.x))
+        // {
+        //     //Debug.Log("complete");
+        //     agent.SetDestination(point2.transform.position);
+        // }
     }
 
     private void FixedUpdate()

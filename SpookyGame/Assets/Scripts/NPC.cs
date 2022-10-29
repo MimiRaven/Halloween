@@ -13,7 +13,7 @@ public class NPC : MonoBehaviour
     public NavMeshAgent agent;
     public GameObject point1;
     public GameObject point2;
-    public GameObject gameManager;
+    GameManager g;
     public SpriteRenderer ren;
     public AudioSource playSound;
     public Color startColor = Color.blue;
@@ -30,6 +30,7 @@ public class NPC : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         ren = GetComponent<SpriteRenderer>();
+
     }
 
 
@@ -40,16 +41,18 @@ public class NPC : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // GetComponent<NavMeshAgent>().SetDestination(point1.transform.position);
+
     }
 
     public void IncreaseScare(float x)
     {
-        GameManager g = gameManager.GetComponent<GameManager>();
         scareMeter += x;
 
         if (canScare == true)
         {
+            GameObject gameManager = GameObject.FindWithTag("GameManager");
+            GameManager g = gameManager.GetComponent<GameManager>();
+            
             g.ScareScore(x);
             LerpColor();
             playSound.Play();
@@ -80,8 +83,6 @@ public class NPC : MonoBehaviour
 
     public void NPCStates()
     {
-        GameManager g = gameManager.GetComponent<GameManager>();
-
         switch (npcState)
         {
             case NPCState.notScared:
