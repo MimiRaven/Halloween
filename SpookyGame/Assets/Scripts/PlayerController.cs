@@ -97,7 +97,6 @@ public class PlayerController : MonoBehaviour
 
         if (lightPossessed == false && possessLight != null && lightPossessCooldown == false)
         {
-            Debug.Log(lightPossessCooldown);
             LightPossessedObjFlickerOff();
         }
 
@@ -156,7 +155,15 @@ public class PlayerController : MonoBehaviour
             PossessObject p = collision.GetComponent<PossessObject>();
             possessObject = collision.gameObject;
 
-            p.OnParticles();
+            if (possessCooldown == false)
+            {
+                p.OnParticles();
+            }
+
+            else if (possessCooldown == true)
+            {
+                p.OffParticles();
+            }
         }
 
         if (collision.tag == "PossessLight" && possessing == false)
@@ -164,7 +171,15 @@ public class PlayerController : MonoBehaviour
             PossessLight l = collision.GetComponent<PossessLight>();
             possessLight = collision.gameObject;
 
-            l.ParticlesOn();
+            if (lightPossessCooldown == false)
+            {
+                l.ParticlesOn();
+            }
+
+            else if (lightPossessCooldown == true)
+            {
+                l.ParticlesOff();
+            }
         }
     }
 
@@ -186,6 +201,7 @@ public class PlayerController : MonoBehaviour
         if (collision.tag == "CanPossess" && possessing == false)
         {
             PossessObject p = collision.GetComponent<PossessObject>();
+
             p.OffParticles();
 
             possessObject = null;
@@ -194,6 +210,7 @@ public class PlayerController : MonoBehaviour
         if (collision.tag == "PossessLight")
         {
             PossessLight l = collision.GetComponent<PossessLight>();
+
             l.ParticlesOff();
             
             possessLight = null;
