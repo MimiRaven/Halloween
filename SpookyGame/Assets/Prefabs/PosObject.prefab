@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3802307985403348552}
   - component: {fileID: 3802307985403348559}
   - component: {fileID: 3802307985403348554}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PosObject
   m_TagString: CanPossess
   m_Icon: {fileID: 0}
