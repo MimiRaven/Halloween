@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 253065856}
   - component: {fileID: 253065855}
   m_Layer: 5
-  m_Name: Options Button
+  m_Name: About Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -401,7 +401,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 519849467}
         m_TargetAssemblyTypeName: mainmenu, Assembly-CSharp
-        m_MethodName: OptionsMenu
+        m_MethodName: AboutMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -431,7 +431,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d3e59baf33e68fb4c844a2d23616c300, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4ede464705683cf4eab643c82f83b464, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

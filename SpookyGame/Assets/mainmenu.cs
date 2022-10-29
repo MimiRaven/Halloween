@@ -9,7 +9,12 @@ public class mainmenu : MonoBehaviour {
     {
         SceneManager.LoadScene("Level1Scene");
     }
- 
+
+    public void AboutMenu()
+    {
+        SceneManager.LoadScene("AboutScene");
+    }
+
     public void OptionsMenu()
     {
         SceneManager.LoadScene("Options Menu");
