@@ -7,6 +7,8 @@ public class PossessLight : MonoBehaviour
     Light2D lightScript;
     public GameObject scareRadius;
     public GameObject lightParticles;
+    public AudioSource lightOn;
+    public AudioSource lightOff;
     void Start()
     {
         lightParticles.SetActive(false);
@@ -31,11 +33,13 @@ public class PossessLight : MonoBehaviour
     public void FlickerLightOn()
     {
         lightScript.intensity = 0;
+        lightOn.Play();
     }
 
     public void FlickerLightOff()
     {
         lightScript.intensity = 1;
+        lightOff.Play();
     }
     
 }

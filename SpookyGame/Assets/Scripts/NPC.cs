@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Audio;
 
 public class NPC : MonoBehaviour
 {
@@ -9,47 +10,38 @@ public class NPC : MonoBehaviour
     public float successLimit = 10;
     public float failedLimit = 100;
     bool canScare = true;
-    public NavMeshAgent agent;
-    public GameObject point1;
-    public GameObject point2;
-    public GameObject gameManager;
+    internal NavMeshAgent agent;
+    public GameObject[] navPoints;
+    GameManager g;
     public SpriteRenderer ren;
+    public AudioSource playSound;
     public Color startColor = Color.blue;
     public Color endColor = Color.white;
     public Color nearDeath = new Color (255, 117, 117);
-
-    public enum NPCState {notScared, successScared, failScared }
-    public NPCState npcState;
+    enum NPCState {notScared, successScared, failScared }
+    NPCState npcState;
+    enum NavState {point0, point1}
+    NavState navState;
+    float destinationCooldownTimer = 3f;
+    bool destinationCooldown;
 
     void Start()
     {
-        // agent = GetComponent<NavMeshAgent>();
-        // agent.SetDestination(point2.transform.position);
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
         ren = GetComponent<SpriteRenderer>();
-    }
-
-
-    void Update()
-    {
-        
-    }
-
-    private void FixedUpdate()
-    {
-        // GetComponent<NavMeshAgent>().SetDestination(point1.transform.position);
     }
 
     public void IncreaseScare(float x)
     {
-        GameManager g = gameManager.GetComponent<GameManager>();
         scareMeter += x;
 
         if (canScare == true)
         {
+            GameObject gameManager = GameObject.FindWithTag("GameManager");
+            GameManager g = gameManager.GetComponent<GameManager>();
+            
             g.ScareScore(x);
-            LerpColor();    
+            LerpColor();
+            playSound.Play();
         }
 
         if (scareMeter >= failedLimit - 9 && canScare == true)
@@ -77,8 +69,6 @@ public class NPC : MonoBehaviour
 
     public void NPCStates()
     {
-        GameManager g = gameManager.GetComponent<GameManager>();
-
         switch (npcState)
         {
             case NPCState.notScared:
@@ -91,7 +81,6 @@ public class NPC : MonoBehaviour
             case NPCState.failScared:
                 g.Scared(-1);
                 break;
-            
         }
     }
 
@@ -104,5 +93,54 @@ public class NPC : MonoBehaviour
     public void ReturnColor()
     {
         ren.color = endColor;
+    }
+
+    public void Nav()
+    {
+        if (Mathf.Approximately(transform.position.x, navPoints[0].transform.position.x) && navState == NavState.point0)
+        {
+            navState = NavState.point1;
+            destinationCooldown = true;
+        }
+
+        if (Mathf.Approximately(transform.position.x, navPoints[1].transform.position.x) && navState == NavState.point1)
+        {
+            navState = NavState.point0;
+            destinationCooldown = true;
+        }
+
+        switch (navState)
+        {
+            case NavState.point0:
+                {
+                    if (destinationCooldown == false)
+                    {
+                        agent.SetDestination(navPoints[0].transform.position);
+                    }
+                }
+                break;
+
+            case NavState.point1:
+                {
+                    if (destinationCooldown == false)
+                    {
+                        agent.SetDestination(navPoints[1].transform.position);
+                    }
+                }
+                break;
+        }
+    }
+
+    public void destCooldown()
+    {
+        if (destinationCooldown == true)
+        {
+            destinationCooldownTimer -= Time.deltaTime;
+            if (destinationCooldownTimer <= 0)
+            {
+                destinationCooldown = false;
+                destinationCooldownTimer = 3f;
+            }
+        }
     }
 }
