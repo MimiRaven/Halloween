@@ -29,10 +29,10 @@ public class PlayerController : MonoBehaviour
 
     public GameObject theRoom;
 
-    float possessTimer = 3f;
+    float possessTimer = 2f;
     bool possessCooldown;
 
-    float lightPossessTimer = 3f;
+    float lightPossessTimer = 2f;
     bool lightPossessCooldown;
 
 
@@ -120,7 +120,7 @@ public class PlayerController : MonoBehaviour
             if (possessTimer <= 0)
             {
                 possessCooldown = false;
-                possessTimer = 3f;
+                possessTimer = 2f;
             }
         }
 
@@ -130,7 +130,7 @@ public class PlayerController : MonoBehaviour
             if (lightPossessTimer <= 0)
             {
                 lightPossessCooldown = false;
-                lightPossessTimer = 3f;
+                lightPossessTimer = 2f;
             }
         }
     }

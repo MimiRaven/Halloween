@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public int totalScares;
     public int endGameTotal = 12;
     public float score;
-    public int winTotal = 300;
+    public int winTotal = 200;
     public TextMeshProUGUI scoreText;
 
     void Start()
@@ -26,22 +26,39 @@ public class GameManager : MonoBehaviour
     public void Scared(int x) 
     {
         totalScares += x;
-
-        if (totalScares == endGameTotal && score == winTotal)
-        {
-            SceneManager.LoadScene("Win Screen");
-        }
-        
-        else if (totalScares == endGameTotal && score < winTotal)
-        {
-            SceneManager.LoadScene("Lose Screen");
-        }
+        EndGame();
     }
 
     public void ScareScore(float x)
     {
         score += x;
         scoreText.text = "" + score.ToString();
+    }
+
+    public void EndGame()
+    {
+        if (totalScares == endGameTotal && score >= winTotal)
+        {
+            SceneManager.LoadScene("Win Screen");
+        }
+
+        else if (totalScares == endGameTotal && score < winTotal)
+        {
+            SceneManager.LoadScene("Lose Screen");
+        }
+    }
+
+    public void TimerEnd()
+    {
+        if (score >= winTotal)
+        {
+            SceneManager.LoadScene("Win Screen");
+        }
+
+        if (score < winTotal)
+        {
+            SceneManager.LoadScene("Lose Screen");
+        }
     }
 
     public void YouLose()

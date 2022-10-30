@@ -9663,6 +9663,10 @@ PrefabInstance:
       value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 8458200902731173862, guid: 99457fa918eecd64c95f21051e747ac9, type: 3}
+      propertyPath: winTotal
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 8458200902731173862, guid: 99457fa918eecd64c95f21051e747ac9, type: 3}
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 1662285242}

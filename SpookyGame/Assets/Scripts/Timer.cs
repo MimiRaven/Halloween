@@ -29,7 +29,7 @@ public class Timer : MonoBehaviour
         {
             timeValue = 0;
             TimerOn = false;
-            g.YouLose();
+            g.TimerEnd();
         }
     }
 
