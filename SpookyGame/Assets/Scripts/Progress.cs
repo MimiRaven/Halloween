@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Progress : MonoBehaviour
 {
+    public GameManager script;
     public static Progress instance { get; private set; }
 
     public Image mask;
@@ -22,6 +23,6 @@ public class Progress : MonoBehaviour
 
     public void SetValue(float value)
     {
-        mask.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, originalSize * value);
+        mask.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, originalSize * script.score);
     }
 }
