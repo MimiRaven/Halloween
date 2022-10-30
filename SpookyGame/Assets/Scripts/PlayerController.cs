@@ -226,7 +226,7 @@ public class PlayerController : MonoBehaviour
     {
         Rigidbody2D objRb2d = possessObject.GetComponent<Rigidbody2D>();
         Vector2 position = rb2d.position;
-        Vector2 objPosition = objRb2d.position;
+        //Vector2 objPosition = objRb2d.position;
 
         possessObject.transform.parent = transform;
         

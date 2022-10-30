@@ -12,7 +12,6 @@ public class NPC : MonoBehaviour
     bool canScare = true;
     internal NavMeshAgent agent;
     public GameObject[] navPoints;
-    GameManager g;
     public SpriteRenderer ren;
     public AudioSource playSound;
     public Color startColor = Color.blue;
@@ -32,13 +31,13 @@ public class NPC : MonoBehaviour
 
     public void IncreaseScare(float x)
     {
+        GameObject gameManager = GameObject.FindWithTag("GameManager");
+        GameManager g = gameManager.GetComponent<GameManager>();
+
         scareMeter += x;
 
         if (canScare == true)
-        {
-            GameObject gameManager = GameObject.FindWithTag("GameManager");
-            GameManager g = gameManager.GetComponent<GameManager>();
-            
+        {       
             g.ScareScore(x);
             LerpColor();
             playSound.Play();
@@ -69,6 +68,9 @@ public class NPC : MonoBehaviour
 
     public void NPCStates()
     {
+        GameObject gameManager = GameObject.FindWithTag("GameManager");
+        GameManager g = gameManager.GetComponent<GameManager>();
+
         switch (npcState)
         {
             case NPCState.notScared:

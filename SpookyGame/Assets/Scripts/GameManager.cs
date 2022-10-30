@@ -12,13 +12,12 @@ public class GameManager : MonoBehaviour
     public float score;
     public int winTotal = 300;
     public TextMeshProUGUI scoreText;
-    // Start is called before the first frame update
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
