@@ -5057,6 +5057,7 @@ MonoBehaviour:
   startColor: {r: 0.14509805, g: 0.6313726, b: 1, a: 1}
   endColor: {r: 1, g: 1, b: 1, a: 1}
   nearDeath: {r: 1, g: 0, b: 0, a: 1}
+  isMoving: 0
 --- !u!212 &307516175 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 1336640496946604302, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
@@ -10361,6 +10362,7 @@ MonoBehaviour:
   startColor: {r: 0.14509805, g: 0.6313726, b: 1, a: 1}
   endColor: {r: 1, g: 1, b: 1, a: 1}
   nearDeath: {r: 1, g: 0, b: 0, a: 1}
+  isMoving: 0
 --- !u!212 &608134084 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 1336640496946604302, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
@@ -11970,6 +11972,7 @@ MonoBehaviour:
   startColor: {r: 0.14509805, g: 0.6313726, b: 1, a: 1}
   endColor: {r: 1, g: 1, b: 1, a: 1}
   nearDeath: {r: 1, g: 0, b: 0, a: 1}
+  isMoving: 0
 --- !u!212 &737569522 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 1336640496946604302, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
@@ -21344,7 +21347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a21aad1fa9254f9bab6c2b2c373d6db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
+  manager: {fileID: 1716689871}
   mask: {fileID: 1912116044}
 --- !u!114 &1317575380
 MonoBehaviour:
@@ -25735,6 +25738,7 @@ MonoBehaviour:
   startColor: {r: 0.14509805, g: 0.6313726, b: 1, a: 1}
   endColor: {r: 1, g: 1, b: 1, a: 1}
   nearDeath: {r: 1, g: 0, b: 0, a: 1}
+  isMoving: 0
 --- !u!212 &1621277812 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 1336640496946604302, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
@@ -26698,6 +26702,7 @@ MonoBehaviour:
   startColor: {r: 0.14509805, g: 0.6313726, b: 1, a: 1}
   endColor: {r: 1, g: 1, b: 1, a: 1}
   nearDeath: {r: 1, g: 0, b: 0, a: 1}
+  isMoving: 0
 --- !u!212 &1716526378 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 1336640496946604302, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
@@ -26708,6 +26713,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4485099438318421343, guid: 99457fa918eecd64c95f21051e747ac9, type: 3}
   m_PrefabInstance: {fileID: 637412092566344140}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1716689871 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8458200902731173862, guid: 99457fa918eecd64c95f21051e747ac9, type: 3}
+  m_PrefabInstance: {fileID: 637412092566344140}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716689870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7621f542bc339643b981f1ec629c450, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1718954512 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1336640496946604300, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
@@ -26736,6 +26752,7 @@ MonoBehaviour:
   startColor: {r: 0.14509805, g: 0.6313726, b: 1, a: 1}
   endColor: {r: 1, g: 1, b: 1, a: 1}
   nearDeath: {r: 1, g: 0, b: 0, a: 1}
+  isMoving: 0
 --- !u!212 &1718954520 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 1336640496946604302, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
@@ -27952,6 +27969,7 @@ MonoBehaviour:
   startColor: {r: 0.14509805, g: 0.6313726, b: 1, a: 1}
   endColor: {r: 1, g: 1, b: 1, a: 1}
   nearDeath: {r: 1, g: 0, b: 0, a: 1}
+  isMoving: 0
 --- !u!212 &1799324407 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 1336640496946604302, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
@@ -28946,6 +28964,7 @@ MonoBehaviour:
   startColor: {r: 0.14509805, g: 0.6313726, b: 1, a: 1}
   endColor: {r: 1, g: 1, b: 1, a: 1}
   nearDeath: {r: 1, g: 0, b: 0, a: 1}
+  isMoving: 0
 --- !u!212 &1872082728 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 1336640496946604302, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
@@ -29431,6 +29450,7 @@ MonoBehaviour:
   startColor: {r: 0.14509805, g: 0.6313726, b: 1, a: 1}
   endColor: {r: 1, g: 1, b: 1, a: 1}
   nearDeath: {r: 1, g: 0, b: 0, a: 1}
+  isMoving: 0
 --- !u!212 &1900169933 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 1336640496946604302, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
@@ -32063,6 +32083,7 @@ MonoBehaviour:
   startColor: {r: 0.14509805, g: 0.6313726, b: 1, a: 1}
   endColor: {r: 1, g: 1, b: 1, a: 1}
   nearDeath: {r: 1, g: 0, b: 0, a: 1}
+  isMoving: 0
 --- !u!212 &2074732364 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 1336640496946604302, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
@@ -32927,6 +32948,7 @@ MonoBehaviour:
   startColor: {r: 0.14509805, g: 0.6313726, b: 1, a: 1}
   endColor: {r: 1, g: 1, b: 1, a: 1}
   nearDeath: {r: 1, g: 0, b: 0, a: 1}
+  isMoving: 0
 --- !u!212 &2107787831 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 1336640496946604302, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
@@ -33227,6 +33249,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8458200902731173862, guid: 99457fa918eecd64c95f21051e747ac9, type: 3}
+      propertyPath: progress
+      value: 
+      objectReference: {fileID: 1317575379}
     - target: {fileID: 8458200902731173862, guid: 99457fa918eecd64c95f21051e747ac9, type: 3}
       propertyPath: winTotal
       value: 200
