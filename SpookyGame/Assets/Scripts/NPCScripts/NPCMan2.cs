@@ -15,7 +15,10 @@ public class NPCMan2 : NPC
 
     void Update()
     {
-        Nav();
-        destCooldown();
+        if (isMoving == true)
+        {
+            Nav();
+            destCooldown();
+        }
     }
 }

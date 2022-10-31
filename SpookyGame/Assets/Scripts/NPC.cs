@@ -23,6 +23,7 @@ public class NPC : MonoBehaviour
     NavState navState;
     float destinationCooldownTimer = 3f;
     bool destinationCooldown;
+    public bool isMoving;
 
     void Start()
     {
