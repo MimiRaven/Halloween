@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using static UnityEngine.Rendering.DebugUI;
 
 
 public class GameManager : MonoBehaviour
@@ -12,6 +13,7 @@ public class GameManager : MonoBehaviour
     public float score;
     public int winTotal = 200;
     public TextMeshProUGUI scoreText;
+    public Progress progress;
 
     void Start()
     {
@@ -33,6 +35,7 @@ public class GameManager : MonoBehaviour
     {
         score += x;
         scoreText.text = "" + score.ToString();
+        progress.SetValue(score);
     }
 
     public void EndGame()
