@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 8143278780146404703}
   - component: {fileID: 7910474605847206237}
   - component: {fileID: 4862760143058627065}
-  m_Layer: 0
+  - component: {fileID: 825182196}
+  m_Layer: 8
   m_Name: SojePlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 13294e68a9f696e469d22767c6d855e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -119,7 +120,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.016088247, y: 0.16955209}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -130,7 +131,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.93187094, y: 0.5382962}
   m_EdgeRadius: 0
 --- !u!50 &7910474605847206237
 Rigidbody2D:
@@ -191,6 +192,26 @@ MonoBehaviour:
   m_DefaultActionMap: WASD
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!95 &825182196
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5863528214461513075}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 512432379f760dc45a0e881069ab5ff6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &9108209072416878913
 GameObject:
   m_ObjectHideFlags: 0
