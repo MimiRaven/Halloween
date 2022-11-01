@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Audio;
-using static UnityEditor.Searcher.SearcherWindow.Alignment;
+
 
 public class NPC : MonoBehaviour
 {

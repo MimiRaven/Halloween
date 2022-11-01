@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Audio;
 using Unity.VisualScripting;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -37,6 +38,8 @@ public class PlayerController : MonoBehaviour
     float lightPossessTimer = 2f;
     bool lightPossessCooldown;
     Animator animator;
+    float absVelocity;
+    Vector2 theVelocity;
 
     public enum Possess {lightState, objState }
     public Possess possessState;
@@ -58,6 +61,25 @@ public class PlayerController : MonoBehaviour
         if (enableMove == true)
         {
             movement = value.Get<Vector2>();
+        }
+    }
+    void FixedUpdate()
+    {
+        if (enableMove == true && movement.x != 0 || movement.y != 0)
+        {
+            rb2d.velocity = movement * speed;
+        }
+        
+        absVelocity = Mathf.Abs(rb2d.velocity.x);
+        theVelocity = new Vector2(Mathf.Abs(rb2d.velocity.x), Mathf.Abs(rb2d.velocity.y));
+        Debug.Log(theVelocity.x);
+
+        animator.SetFloat("Move X", rb2d.velocity.x);
+        animator.SetFloat("Speed", absVelocity);
+
+        if (possessed == true)
+        {
+            PossessedObjMovement();
         }
     }
 
@@ -152,27 +174,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
-    {
-        if (enableMove == true && movement.x != 0 || movement.y != 0)
-        {
-            rb2d.velocity = movement * speed;
-        }
-
-        var absVelocity = Mathf.Abs(rb2d.velocity.x);
-
-        animator.SetFloat("Move X", rb2d.velocity.x);
-        animator.SetFloat("Speed", absVelocity);
-
-        if (possessed == true)
-        {
-            PossessedObjMovement();
-        }
-    }
 
     void OnTriggerStay2D(Collider2D collision)
     {
-        
+
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -297,7 +302,7 @@ public class PlayerController : MonoBehaviour
         s.ScareNPC();
         l.FlickerLightOn();
 
-        possessing = true;
+        //possessing = true;
         blankColor.a = 0;
         spriteRen.color = blankColor;
         lightPossessed = true;
