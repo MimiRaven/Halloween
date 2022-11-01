@@ -38,6 +38,8 @@ public class PlayerController : MonoBehaviour
     bool lightPossessCooldown;
     Animator animator;
 
+    public enum Possess {lightState, objState }
+    public Possess possessState;
     private void Awake()
     {
         Time.timeScale = 1;
@@ -85,33 +87,40 @@ public class PlayerController : MonoBehaviour
 
     private void OnInteract() // This IS the Space and A Button
     {
-        if (possessed == false && possessObject != null && possessCooldown == false)
+        switch(possessState)
         {
-            PossessObject p = possessObject.GetComponent<PossessObject>();
+            case Possess.lightState:
+                if (lightPossessed == true)
+                {
+                    LightPossessedObjFlickerOn();
+                    lightPossessCooldown = true;
+                }
 
-            p.scareRadius.SetActive(true);
-            p.posRen.sortingOrder = 10;
-            blankColor.a = 0;
-            spriteRen.color = blankColor;
-            possessed = true;
-        }
+                else if (lightPossessed == false && possessLight != null && lightPossessCooldown == false)
+                {
+                    LightPossessedObjFlickerOff();
+                } 
+                break;
 
-        else if (possessed == true)
-        {
-            PossessedObjAction();
-            possessCooldown = true;
-        }
+            case Possess.objState:
+                if (possessed == false && possessObject != null && possessCooldown == false)
+                {
+                    PossessObject p = possessObject.GetComponent<PossessObject>();
 
+                    p.scareRadius.SetActive(true);
+                    p.posRen.sortingOrder = 10;
+                    blankColor.a = 0;
+                    spriteRen.color = blankColor;
+                    possessed = true;
+                    possessState = Possess.objState;
+                }
 
-        if (lightPossessed == false && possessLight != null && lightPossessCooldown == false)
-        {
-            LightPossessedObjFlickerOff();
-        }
-
-        else if (lightPossessed == true)
-        {
-            LightPossessedObjFlickerOn();
-            lightPossessCooldown = true;
+                else if (possessed == true)
+                {
+                    PossessedObjAction();
+                    possessCooldown = true;
+                }
+                break;
         }
     }
 
@@ -163,10 +172,17 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collision)
     {
+        
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
         if (collision.tag == "CanPossess" && possessing == false)
         {
             PossessObject p = collision.GetComponent<PossessObject>();
             possessObject = collision.gameObject;
+
+            possessState = Possess.objState;
 
             if (possessCooldown == false)
             {
@@ -184,6 +200,8 @@ public class PlayerController : MonoBehaviour
             PossessLight l = collision.GetComponent<PossessLight>();
             possessLight = collision.gameObject;
 
+            possessState = Possess.lightState;
+
             if (lightPossessCooldown == false)
             {
                 l.ParticlesOn();
@@ -194,10 +212,7 @@ public class PlayerController : MonoBehaviour
                 l.ParticlesOff();
             }
         }
-    }
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
         if (collision.tag == "Room")
         {
             theRoom = collision.gameObject;
