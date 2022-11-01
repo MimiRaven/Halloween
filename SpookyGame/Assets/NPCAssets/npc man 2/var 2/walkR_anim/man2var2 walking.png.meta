@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 11bbf3d99f0419f4eac6d52dcf8f466d
+guid: 68c27dfb508c54f42b07dbe88d5c3a89
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: man2var1 walking_0
+      name: man2var2 walking_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ca298ccc3708144682a93733943b76b
-      internalID: -2136998075
+      spriteID: 5e1aa7d702c14cc4d8d1c5268b19e9c2
+      internalID: -1831136840
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: man2var1 walking_1
+      name: man2var2 walking_1
       rect:
         serializedVersion: 2
         x: 462
@@ -139,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 870462084fec37d49b42d5d268a5dc6f
-      internalID: 1965213319
+      spriteID: 67ed805cc84e3d14ab031d6ae224e7cd
+      internalID: -1698240610
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: man2var1 walking_2
+      name: man2var2 walking_2
       rect:
         serializedVersion: 2
         x: 924
@@ -160,14 +160,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c67d81c7fbc82e74fb9b19aa2690670e
-      internalID: 1280114330
+      spriteID: fa83467c77e548f44b4b2da8db4b2118
+      internalID: 49329229
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: man2var1 walking_3
+      name: man2var2 walking_3
       rect:
         serializedVersion: 2
         x: 0
@@ -181,14 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd91b4a7df5be7249b3a6e1bbd80c781
-      internalID: 1222592060
+      spriteID: c381ad3f8cc8a6648871c2e62c6a8938
+      internalID: -1281072754
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: man2var1 walking_4
+      name: man2var2 walking_4
       rect:
         serializedVersion: 2
         x: 462
@@ -202,14 +202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c779d6e421916ba408130942d8eda938
-      internalID: 766087171
+      spriteID: e0df460918cb3bd4b83727ed39ffe68f
+      internalID: -654132653
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: man2var1 walking_5
+      name: man2var2 walking_5
       rect:
         serializedVersion: 2
         x: 924
@@ -223,14 +223,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9348e2eb0d181514bbafbb06d19def19
-      internalID: -2095097953
+      spriteID: e6a56d20ee694394ebe2cdf2255019c9
+      internalID: 839568956
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: man2var1 walking_6
+      name: man2var2 walking_6
       rect:
         serializedVersion: 2
         x: 0
@@ -244,14 +244,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2da20d1fa07cf2c459ab56211e14f84d
-      internalID: 885527376
+      spriteID: d8d81d58d75bd754c8a6085a42055791
+      internalID: -927941748
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: man2var1 walking_7
+      name: man2var2 walking_7
       rect:
         serializedVersion: 2
         x: 462
@@ -265,14 +265,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07e4bf049c3e69a4088fd828783abeee
-      internalID: -700234778
+      spriteID: f8905713418246340ab5993b517aabde
+      internalID: 1309354458
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: man2var1 walking_8
+      name: man2var2 walking_8
       rect:
         serializedVersion: 2
         x: 924
@@ -286,8 +286,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d20dd0d3da6d07489a46f9a94aef3c2
-      internalID: 949122654
+      spriteID: f539ffe2a6dc5d348a6602f4c7e1e754
+      internalID: 1398263957
       vertices: []
       indices: 
       edges: []
@@ -303,15 +303,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      man2var1 walking_6: 885527376
-      man2var1 walking_8: 949122654
-      man2var1 walking_2: 1280114330
-      man2var1 walking_5: -2095097953
-      man2var1 walking_4: 766087171
-      man2var1 walking_7: -700234778
-      man2var1 walking_3: 1222592060
-      man2var1 walking_0: -2136998075
-      man2var1 walking_1: 1965213319
+      man2var2 walking_4: -654132653
+      man2var2 walking_1: -1698240610
+      man2var2 walking_0: -1831136840
+      man2var2 walking_3: -1281072754
+      man2var2 walking_2: 49329229
+      man2var2 walking_6: -927941748
+      man2var2 walking_5: 839568956
+      man2var2 walking_7: 1309354458
+      man2var2 walking_8: 1398263957
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
