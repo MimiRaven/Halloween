@@ -3,31 +3,48 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Audio;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class NPC : MonoBehaviour
 {
-    public float scareMeter;
+    float scareMeter;
     public float successLimit = 10;
     public float failedLimit = 100;
     bool canScare = true;
     internal NavMeshAgent agent;
     public GameObject[] navPoints;
-    public SpriteRenderer ren;
+    SpriteRenderer ren;
     public AudioSource playSound;
-    public Color startColor = Color.blue;
+    public Color startColor = new(255, 153, 153);
     public Color endColor = Color.white;
-    public Color nearDeath = new Color (255, 117, 117);
+
     enum NPCState {notScared, successScared, failScared }
     NPCState npcState;
-    enum NavState {point0, point1}
+    enum NavState {point0, point1, dead}
     NavState navState;
     float destinationCooldownTimer = 3f;
     bool destinationCooldown;
     public bool isMoving;
+    internal Animator animator;
+    public int direction = -1;
 
     void Start()
     {
         ren = GetComponent<SpriteRenderer>();
+        agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
+
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+    }
+
+    void FixedUpdate()
+    {
+        if (isMoving == true)
+        {
+            Nav();
+            destCooldown();
+        }
     }
 
     public void IncreaseScare(float x)
@@ -36,17 +53,17 @@ public class NPC : MonoBehaviour
         GameManager g = gameManager.GetComponent<GameManager>();
 
         scareMeter += x;
-
+        
         if (canScare == true)
-        {       
+        {
+            animator.SetTrigger("Scared");
             g.ScareScore(x);
-            LerpColor();
             playSound.Play();
         }
 
         if (scareMeter >= failedLimit - 9 && canScare == true)
         {
-            ren.color = nearDeath;
+            LerpColor();
         }
 
         if (scareMeter == successLimit && canScare == true)
@@ -58,9 +75,8 @@ public class NPC : MonoBehaviour
         if (scareMeter >= failedLimit && canScare == true)
         {
             agent.isStopped = true;
-            transform.eulerAngles = Vector3.forward * 90;
             canScare = false;
-
+            animator.SetTrigger("Death");
             g.ScareScore(-scareMeter);
             NPCStates();
             npcState = NPCState.failScared;
@@ -82,20 +98,10 @@ public class NPC : MonoBehaviour
                 break;
 
             case NPCState.failScared:
-                g.Scared(-1);
+                g.Scared(-1);                
+                navState = NavState.dead;         
                 break;
         }
-    }
-
-    public void LerpColor()
-    {
-        ren.color = startColor;
-        Invoke("ReturnColor", 1f);
-    }
-
-    public void ReturnColor()
-    {
-        ren.color = endColor;
     }
 
     public void Nav()
@@ -104,12 +110,14 @@ public class NPC : MonoBehaviour
         {
             navState = NavState.point1;
             destinationCooldown = true;
+            animator.SetFloat("Speed", agent.velocity.magnitude);
         }
 
         if (Mathf.Approximately(transform.position.x, navPoints[1].transform.position.x) && navState == NavState.point1)
         {
             navState = NavState.point0;
             destinationCooldown = true;
+            animator.SetFloat("Speed", agent.velocity.magnitude);
         }
 
         switch (navState)
@@ -119,6 +127,8 @@ public class NPC : MonoBehaviour
                     if (destinationCooldown == false)
                     {
                         agent.SetDestination(navPoints[0].transform.position);
+                        animator.SetFloat("Move X", direction);
+                        animator.SetFloat("Speed", agent.velocity.magnitude);
                     }
                 }
                 break;
@@ -128,7 +138,17 @@ public class NPC : MonoBehaviour
                     if (destinationCooldown == false)
                     {
                         agent.SetDestination(navPoints[1].transform.position);
+                        animator.SetFloat("Move X", -direction);
+                        animator.SetFloat("Speed", agent.velocity.magnitude);
                     }
+                }
+                break;
+
+            case NavState.dead:
+                {
+                    isMoving = false;
+                    animator.SetTrigger("Death");
+                    animator.SetFloat("Speed", agent.velocity.magnitude);                 
                 }
                 break;
         }
@@ -145,5 +165,16 @@ public class NPC : MonoBehaviour
                 destinationCooldownTimer = 3f;
             }
         }
+    }
+
+    public void LerpColor()
+    {
+        ren.color = startColor;
+        Invoke("ReturnColor", 1f);
+    }
+
+    public void ReturnColor()
+    {
+        ren.color = endColor;
     }
 }

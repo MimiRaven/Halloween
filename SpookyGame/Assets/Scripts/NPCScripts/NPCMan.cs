@@ -7,9 +7,8 @@ public class NPCMan : NPC
 {
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
-        
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
+
     }
+
+    
 }
