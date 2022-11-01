@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1336640496946604301}
   - component: {fileID: 1336640496946604400}
   - component: {fileID: 3546624301703437325}
+  - component: {fileID: 5245218798307747046}
   m_Layer: 0
   m_Name: NPC
   m_TagString: NPC
@@ -100,15 +101,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e5d324c49627c841874825fb6754f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scareMeter: 0
   successLimit: 30
   failedLimit: 31
-  navPoints: []
-  ren: {fileID: 0}
+  navPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  isMoving: 0
   playSound: {fileID: 0}
   startColor: {r: 1, g: 0.6, b: 0.6, a: 1}
   endColor: {r: 1, g: 1, b: 1, a: 1}
-  isMoving: 0
   direction: -1
 --- !u!61 &1336640496946604301
 BoxCollider2D:
@@ -164,7 +165,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1336640496946604300}
-  m_Enabled: 0
+  m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1.155
   m_Speed: 3.5
@@ -179,3 +180,18 @@ NavMeshAgent:
   m_BaseOffset: -0.04
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &5245218798307747046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336640496946604300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e013dce2163732043a2870697387d570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: 
+    sentences: []

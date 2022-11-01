@@ -163,6 +163,7 @@ Transform:
   - {fileID: 338856695}
   - {fileID: 1149205651}
   - {fileID: 1927132248}
+  - {fileID: 1620841503}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -182,6 +183,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 968837737}
     - target: {fileID: -8995594976968062889, guid: 32b39c90664f8d845b94d3da5542387c, type: 3}
+      propertyPath: navPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1721052077}
+    - target: {fileID: 8185388809851699748, guid: 32b39c90664f8d845b94d3da5542387c, type: 3}
+      propertyPath: isMoving
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8185388809851699748, guid: 32b39c90664f8d845b94d3da5542387c, type: 3}
+      propertyPath: navPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 968837737}
+    - target: {fileID: 8185388809851699748, guid: 32b39c90664f8d845b94d3da5542387c, type: 3}
       propertyPath: navPoints.Array.data[1]
       value: 
       objectReference: {fileID: 1721052077}
@@ -2274,6 +2287,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9228837}
     m_Modifications:
+    - target: {fileID: 5734695295043890118, guid: 5887a42bdcdf63742bf6560bd0f62c16, type: 3}
+      propertyPath: isMoving
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5734695295043890118, guid: 5887a42bdcdf63742bf6560bd0f62c16, type: 3}
+      propertyPath: navPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1041453933}
+    - target: {fileID: 5734695295043890118, guid: 5887a42bdcdf63742bf6560bd0f62c16, type: 3}
+      propertyPath: navPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1897191073}
     - target: {fileID: 7524830241829042022, guid: 5887a42bdcdf63742bf6560bd0f62c16, type: 3}
       propertyPath: navPoints.Array.size
       value: 2
@@ -2805,6 +2830,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 999179118}
     - target: {fileID: -8995594976968062889, guid: 32b39c90664f8d845b94d3da5542387c, type: 3}
+      propertyPath: navPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1949657102}
+    - target: {fileID: 8185388809851699748, guid: 32b39c90664f8d845b94d3da5542387c, type: 3}
+      propertyPath: isMoving
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8185388809851699748, guid: 32b39c90664f8d845b94d3da5542387c, type: 3}
+      propertyPath: navPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 999179118}
+    - target: {fileID: 8185388809851699748, guid: 32b39c90664f8d845b94d3da5542387c, type: 3}
       propertyPath: navPoints.Array.data[1]
       value: 
       objectReference: {fileID: 1949657102}
@@ -15946,6 +15983,18 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: aea32af5a9fc2454f8cb93b8cf24d985, type: 3}
+    - target: {fileID: 8185388809851699748, guid: 32b39c90664f8d845b94d3da5542387c, type: 3}
+      propertyPath: isMoving
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8185388809851699748, guid: 32b39c90664f8d845b94d3da5542387c, type: 3}
+      propertyPath: navPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1896793098}
+    - target: {fileID: 8185388809851699748, guid: 32b39c90664f8d845b94d3da5542387c, type: 3}
+      propertyPath: navPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1305628296}
     - target: {fileID: 8854396067965394541, guid: 32b39c90664f8d845b94d3da5542387c, type: 3}
       propertyPath: m_Name
       value: Man2Prefab
@@ -17660,6 +17709,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9228837}
     m_Modifications:
+    - target: {fileID: 5734695295043890118, guid: 5887a42bdcdf63742bf6560bd0f62c16, type: 3}
+      propertyPath: isMoving
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5734695295043890118, guid: 5887a42bdcdf63742bf6560bd0f62c16, type: 3}
+      propertyPath: navPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1159598241}
+    - target: {fileID: 5734695295043890118, guid: 5887a42bdcdf63742bf6560bd0f62c16, type: 3}
+      propertyPath: navPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 308833683}
     - target: {fileID: 7524830241829042022, guid: 5887a42bdcdf63742bf6560bd0f62c16, type: 3}
       propertyPath: navPoints.Array.size
       value: 2
@@ -20955,7 +21016,6 @@ Transform:
   m_Children:
   - {fileID: 1139187818}
   - {fileID: 2042157239}
-  - {fileID: 1620841503}
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20983,7 +21043,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1620841502}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -40.928955, y: 0.59241295, z: -0.2281807}
+  m_LocalPosition: {x: -5.252674, y: 18.908756, z: -0.95650697}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20993,8 +21053,8 @@ Transform:
   - {fileID: 1885596420}
   - {fileID: 1234771436}
   - {fileID: 226772218}
-  m_Father: {fileID: 1610626639}
-  m_RootOrder: 2
+  m_Father: {fileID: 9228837}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1629302073
 GameObject:
@@ -22365,6 +22425,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9228837}
     m_Modifications:
+    - target: {fileID: 5734695295043890118, guid: 5887a42bdcdf63742bf6560bd0f62c16, type: 3}
+      propertyPath: navPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1292368968}
+    - target: {fileID: 5734695295043890118, guid: 5887a42bdcdf63742bf6560bd0f62c16, type: 3}
+      propertyPath: navPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 79264167}
     - target: {fileID: 7524830241829042022, guid: 5887a42bdcdf63742bf6560bd0f62c16, type: 3}
       propertyPath: navPoints.Array.size
       value: 2

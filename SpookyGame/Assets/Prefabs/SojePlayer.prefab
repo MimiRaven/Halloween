@@ -103,8 +103,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playSound: {fileID: 6591643071877166500}
-  speed: 5
+  speed: 7
   possessObject: {fileID: 0}
+  possessLight: {fileID: 0}
   Pause: {fileID: 0}
   theRoom: {fileID: 0}
 --- !u!61 &8143278780146404703
@@ -146,7 +147,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 5
-  m_LinearDrag: 0
+  m_LinearDrag: 10
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}

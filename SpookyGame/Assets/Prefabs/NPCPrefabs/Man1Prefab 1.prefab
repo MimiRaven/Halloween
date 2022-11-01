@@ -165,6 +165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8854396067965394542}
   - component: {fileID: 8854396067965394543}
+  - component: {fileID: 4135936820729446923}
   - component: {fileID: 8854396067965394540}
   - component: {fileID: 8854396067965394449}
   - component: {fileID: 6437250521926151020}
@@ -244,6 +245,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &4135936820729446923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8854396067965394541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e5d324c49627c841874825fb6754f43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  successLimit: 30
+  failedLimit: 31
+  navPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  isMoving: 0
+  playSound: {fileID: 7524830242374779159}
+  startColor: {r: 1, g: 0.6, b: 0.6, a: 1}
+  endColor: {r: 1, g: 1, b: 1, a: 1}
+  direction: -1
 --- !u!61 &8854396067965394540
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -320,20 +343,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8854396067965394541}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3e0f37f7fbce5c43b2caafff00568c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scareMeter: 0
   successLimit: 30
   failedLimit: 31
-  agent: {fileID: 6437250521926151020}
-  point1: {fileID: 0}
-  point2: {fileID: 0}
-  ren: {fileID: 8854396067965394543}
+  navPoints: []
+  isMoving: 0
   playSound: {fileID: 7524830242374779159}
   startColor: {r: 0.14509805, g: 0.6313726, b: 1, a: 1}
   endColor: {r: 1, g: 1, b: 1, a: 1}
-  nearDeath: {r: 1, g: 0, b: 0, a: 0.6313726}
-  npcState: 0
+  direction: -1

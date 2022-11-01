@@ -13,6 +13,7 @@ public class NPC : MonoBehaviour
     bool canScare = true;
     internal NavMeshAgent agent;
     public GameObject[] navPoints;
+    public bool isMoving;
     SpriteRenderer ren;
     public AudioSource playSound;
     public Color startColor = new(255, 153, 153);
@@ -24,15 +25,14 @@ public class NPC : MonoBehaviour
     NavState navState;
     float destinationCooldownTimer = 3f;
     bool destinationCooldown;
-    public bool isMoving;
-    internal Animator animator;
+    //internal Animator animator;
     public int direction = -1;
 
     void Start()
     {
         ren = GetComponent<SpriteRenderer>();
         agent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
 
         agent.updateRotation = false;
         agent.updateUpAxis = false;
@@ -56,7 +56,7 @@ public class NPC : MonoBehaviour
         
         if (canScare == true)
         {
-            animator.SetTrigger("Scared");
+            //animator.SetTrigger("Scared");
             g.ScareScore(x);
             playSound.Play();
         }
@@ -74,9 +74,10 @@ public class NPC : MonoBehaviour
 
         if (scareMeter >= failedLimit && canScare == true)
         {
+            transform.eulerAngles = Vector3.forward * 90;
             agent.isStopped = true;
             canScare = false;
-            animator.SetTrigger("Death");
+            //animator.SetTrigger("Death");
             g.ScareScore(-scareMeter);
             NPCStates();
             npcState = NPCState.failScared;
@@ -110,14 +111,14 @@ public class NPC : MonoBehaviour
         {
             navState = NavState.point1;
             destinationCooldown = true;
-            animator.SetFloat("Speed", agent.velocity.magnitude);
+            //animator.SetFloat("Speed", agent.velocity.magnitude);
         }
 
         if (Mathf.Approximately(transform.position.x, navPoints[1].transform.position.x) && navState == NavState.point1)
         {
             navState = NavState.point0;
             destinationCooldown = true;
-            animator.SetFloat("Speed", agent.velocity.magnitude);
+            //animator.SetFloat("Speed", agent.velocity.magnitude);
         }
 
         switch (navState)
@@ -127,8 +128,8 @@ public class NPC : MonoBehaviour
                     if (destinationCooldown == false)
                     {
                         agent.SetDestination(navPoints[0].transform.position);
-                        animator.SetFloat("Move X", direction);
-                        animator.SetFloat("Speed", agent.velocity.magnitude);
+                        //animator.SetFloat("Move X", direction);
+                        //animator.SetFloat("Speed", agent.velocity.magnitude);
                     }
                 }
                 break;
@@ -138,8 +139,8 @@ public class NPC : MonoBehaviour
                     if (destinationCooldown == false)
                     {
                         agent.SetDestination(navPoints[1].transform.position);
-                        animator.SetFloat("Move X", -direction);
-                        animator.SetFloat("Speed", agent.velocity.magnitude);
+                        //animator.SetFloat("Move X", -direction);
+                        //animator.SetFloat("Speed", agent.velocity.magnitude);
                     }
                 }
                 break;
@@ -147,8 +148,8 @@ public class NPC : MonoBehaviour
             case NavState.dead:
                 {
                     isMoving = false;
-                    animator.SetTrigger("Death");
-                    animator.SetFloat("Speed", agent.velocity.magnitude);                 
+                    //animator.SetTrigger("Death");
+                    //animator.SetFloat("Speed", agent.velocity.magnitude);                 
                 }
                 break;
         }

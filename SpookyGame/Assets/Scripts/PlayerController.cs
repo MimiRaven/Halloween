@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Audio;
+using Unity.VisualScripting;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb2d;
     public int speed = 5;
     public GameObject possessObject;
-    GameObject possessLight;
+    public GameObject possessLight;
     bool possessed;
     bool lightPossessed;
     bool enableMove = true;
@@ -35,7 +36,7 @@ public class PlayerController : MonoBehaviour
 
     float lightPossessTimer = 2f;
     bool lightPossessCooldown;
-
+    Animator animator;
 
     private void Awake()
     {
@@ -43,14 +44,19 @@ public class PlayerController : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         spriteRen = GetComponent<SpriteRenderer>();
         playerInput = GetComponent<PlayerInput>();
+        animator = GetComponent<Animator>();
         InteractAction = playerInput.actions["Interact"];
         WhisperAction = playerInput.actions["Whisper"];
         spriteRen.color = blankColor;
+
     }
 
     private void OnMovement(InputValue value) // These are Movement Keys
     {
-        movement = value.Get<Vector2>();
+        if (enableMove == true)
+        {
+            movement = value.Get<Vector2>();
+        }
     }
 
     private void OnPauseMenu()
@@ -83,6 +89,7 @@ public class PlayerController : MonoBehaviour
         {
             PossessObject p = possessObject.GetComponent<PossessObject>();
 
+            p.scareRadius.SetActive(true);
             p.posRen.sortingOrder = 10;
             blankColor.a = 0;
             spriteRen.color = blankColor;
@@ -138,10 +145,15 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (enableMove == true)
+        if (enableMove == true && movement.x != 0 || movement.y != 0)
         {
-            rb2d.MovePosition(rb2d.position + movement * speed * Time.fixedDeltaTime);
+            rb2d.velocity = movement * speed;
         }
+
+        var absVelocity = Mathf.Abs(rb2d.velocity.x);
+
+        animator.SetFloat("Move X", rb2d.velocity.x);
+        animator.SetFloat("Speed", absVelocity);
 
         if (possessed == true)
         {
@@ -257,6 +269,7 @@ public class PlayerController : MonoBehaviour
         possessed = false;
         possessObject = null;
         theRoom = null;
+        p.scareRadius.SetActive(false);
     }
 
     void LightPossessedObjFlickerOff()
@@ -264,6 +277,7 @@ public class PlayerController : MonoBehaviour
         PossessLight l = possessLight.GetComponent<PossessLight>();
         ScareRadius s = l.scareRadius.GetComponent<ScareRadius>();
 
+        speed = 0;
         enableMove = false;
         s.ScareNPC();
         l.FlickerLightOn();
@@ -278,6 +292,8 @@ public class PlayerController : MonoBehaviour
     {
         PossessLight l = possessLight.GetComponent<PossessLight>();
         ScareRadius s = l.scareRadius.GetComponent<ScareRadius>();
+
+        speed = 7;
 
         enableMove = true;
         s.ScareNPC();

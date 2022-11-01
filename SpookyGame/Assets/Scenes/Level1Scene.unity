@@ -1755,9 +1755,25 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
-      propertyPath: m_Enabled
-      value: 0
+      propertyPath: isMoving
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
+      propertyPath: playSound
+      value: 
+      objectReference: {fileID: 1460975762}
+    - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
+      propertyPath: navPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 829920812}
+    - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
+      propertyPath: navPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 605610657}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
 --- !u!4 &80454124 stripped
@@ -2223,7 +2239,7 @@ PrefabInstance:
       objectReference: {fileID: 159217788}
     - target: {fileID: 4583745570999332604, guid: 203accac57ad62c448712412dc38932a, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7090815889442360986, guid: 203accac57ad62c448712412dc38932a, type: 3}
       propertyPath: scareValue
@@ -2981,7 +2997,7 @@ PrefabInstance:
       objectReference: {fileID: 1989188830}
     - target: {fileID: 4583745570999332604, guid: 203accac57ad62c448712412dc38932a, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7090815889442360986, guid: 203accac57ad62c448712412dc38932a, type: 3}
       propertyPath: scareValue
@@ -3326,7 +3342,7 @@ PrefabInstance:
       objectReference: {fileID: 630166075}
     - target: {fileID: 4583745570999332604, guid: 203accac57ad62c448712412dc38932a, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7090815889442360986, guid: 203accac57ad62c448712412dc38932a, type: 3}
       propertyPath: scareValue
@@ -5035,8 +5051,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
+      propertyPath: playSound
+      value: 
+      objectReference: {fileID: 1372332787}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
 --- !u!4 &307516167 stripped
@@ -5059,10 +5079,10 @@ MonoBehaviour:
   successLimit: 30
   failedLimit: 31
   navPoints: []
+  isMoving: 0
   playSound: {fileID: 1372332787}
   startColor: {r: 255, g: 153, b: 153, a: 1}
   endColor: {r: 1, g: 1, b: 1, a: 1}
-  isMoving: 0
   direction: 1
 --- !u!1 &308147759
 GameObject:
@@ -5433,7 +5453,7 @@ PrefabInstance:
       objectReference: {fileID: 1914873879}
     - target: {fileID: 4583745570999332604, guid: 203accac57ad62c448712412dc38932a, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7090815889442360986, guid: 203accac57ad62c448712412dc38932a, type: 3}
       propertyPath: scareValue
@@ -7611,7 +7631,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 471368930}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -8853,7 +8873,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.9887187, y: 2.6100564, z: -10}
+  m_LocalPosition: {x: 0.15549535, y: 2.610003, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -9554,7 +9574,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 576821357}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -42, y: -6.5, z: 0}
+  m_LocalPosition: {x: -42, y: -7.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9778,7 +9798,7 @@ PrefabInstance:
       objectReference: {fileID: 348956835}
     - target: {fileID: 4583745570999332604, guid: 203accac57ad62c448712412dc38932a, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7090815889442360986, guid: 203accac57ad62c448712412dc38932a, type: 3}
       propertyPath: scareValue
@@ -10414,10 +10434,10 @@ MonoBehaviour:
   navPoints:
   - {fileID: 1013278942}
   - {fileID: 1264959056}
+  isMoving: 1
   playSound: {fileID: 1498613428}
   startColor: {r: 255, g: 153, b: 153, a: 1}
   endColor: {r: 1, g: 1, b: 1, a: 1}
-  isMoving: 1
   direction: -1
 --- !u!212 &608134084 stripped
 SpriteRenderer:
@@ -11237,7 +11257,7 @@ PrefabInstance:
       objectReference: {fileID: 857603670}
     - target: {fileID: 4583745570999332604, guid: 203accac57ad62c448712412dc38932a, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7090815889442360986, guid: 203accac57ad62c448712412dc38932a, type: 3}
       propertyPath: scareValue
@@ -12018,8 +12038,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
+      propertyPath: playSound
+      value: 
+      objectReference: {fileID: 992067390}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
 --- !u!4 &737569514 stripped
@@ -12042,10 +12066,10 @@ MonoBehaviour:
   successLimit: 30
   failedLimit: 31
   navPoints: []
+  isMoving: 0
   playSound: {fileID: 992067390}
   startColor: {r: 255, g: 153, b: 153, a: 1}
   endColor: {r: 1, g: 1, b: 1, a: 1}
-  isMoving: 0
   direction: 1
 --- !u!4 &741930968 stripped
 Transform:
@@ -12737,8 +12761,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
+      propertyPath: playSound
+      value: 
+      objectReference: {fileID: 1033289165}
+    - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
+      propertyPath: navPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 973765862}
+    - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
+      propertyPath: navPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1886968688}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
 --- !u!4 &806149343 stripped
@@ -13046,9 +13082,25 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
-      propertyPath: m_Enabled
-      value: 0
+      propertyPath: isMoving
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
+      propertyPath: playSound
+      value: 
+      objectReference: {fileID: 202058630}
+    - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
+      propertyPath: navPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1681617780}
+    - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
+      propertyPath: navPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1378783514}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
 --- !u!4 &820825551 stripped
@@ -16482,7 +16534,7 @@ PrefabInstance:
       objectReference: {fileID: 1264652236}
     - target: {fileID: 4583745570999332604, guid: 203accac57ad62c448712412dc38932a, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7090815889442360986, guid: 203accac57ad62c448712412dc38932a, type: 3}
       propertyPath: scareValue
@@ -18695,7 +18747,7 @@ PrefabInstance:
       objectReference: {fileID: 1345989922}
     - target: {fileID: 4583745570999332604, guid: 203accac57ad62c448712412dc38932a, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7090815889442360986, guid: 203accac57ad62c448712412dc38932a, type: 3}
       propertyPath: scareValue
@@ -21765,7 +21817,7 @@ PrefabInstance:
       objectReference: {fileID: 971312146}
     - target: {fileID: 4583745570999332604, guid: 203accac57ad62c448712412dc38932a, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7090815889442360986, guid: 203accac57ad62c448712412dc38932a, type: 3}
       propertyPath: scareValue
@@ -21859,7 +21911,7 @@ PrefabInstance:
       objectReference: {fileID: 1504169305}
     - target: {fileID: 4583745570999332604, guid: 203accac57ad62c448712412dc38932a, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7090815889442360986, guid: 203accac57ad62c448712412dc38932a, type: 3}
       propertyPath: scareValue
@@ -24299,7 +24351,7 @@ PrefabInstance:
       objectReference: {fileID: 974729628}
     - target: {fileID: 4583745570999332604, guid: 203accac57ad62c448712412dc38932a, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7090815889442360986, guid: 203accac57ad62c448712412dc38932a, type: 3}
       propertyPath: scareValue
@@ -25697,9 +25749,25 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
-      propertyPath: m_Enabled
-      value: 0
+      propertyPath: isMoving
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
+      propertyPath: playSound
+      value: 
+      objectReference: {fileID: 1518670384}
+    - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
+      propertyPath: navPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 619882734}
+    - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
+      propertyPath: navPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 580207349}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
 --- !u!1 &1619926060
@@ -25914,10 +25982,10 @@ MonoBehaviour:
   navPoints:
   - {fileID: 619882734}
   - {fileID: 580207349}
+  isMoving: 0
   playSound: {fileID: 1518670384}
   startColor: {r: 255, g: 153, b: 153, a: 1}
   endColor: {r: 1, g: 1, b: 1, a: 1}
-  isMoving: 0
   direction: 1
 --- !u!1 &1623452406
 GameObject:
@@ -26848,9 +26916,25 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
-      propertyPath: m_Enabled
-      value: 0
+      propertyPath: isMoving
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
+      propertyPath: playSound
+      value: 
+      objectReference: {fileID: 83605293}
+    - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
+      propertyPath: navPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 111156146}
+    - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
+      propertyPath: navPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 547420413}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
 --- !u!4 &1716526370 stripped
@@ -26875,10 +26959,10 @@ MonoBehaviour:
   navPoints:
   - {fileID: 111156146}
   - {fileID: 547420413}
+  isMoving: 0
   playSound: {fileID: 83605293}
   startColor: {r: 255, g: 153, b: 153, a: 1}
   endColor: {r: 1, g: 1, b: 1, a: 1}
-  isMoving: 0
   direction: 1
 --- !u!1 &1716689870 stripped
 GameObject:
@@ -26918,10 +27002,10 @@ MonoBehaviour:
   navPoints:
   - {fileID: 1681617780}
   - {fileID: 1378783514}
+  isMoving: 0
   playSound: {fileID: 202058630}
   startColor: {r: 255, g: 153, b: 153, a: 1}
   endColor: {r: 1, g: 1, b: 1, a: 1}
-  isMoving: 0
   direction: 1
 --- !u!1 &1733328948
 GameObject:
@@ -27368,7 +27452,7 @@ PrefabInstance:
       objectReference: {fileID: 926897442}
     - target: {fileID: 4583745570999332604, guid: 203accac57ad62c448712412dc38932a, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7090815889442360986, guid: 203accac57ad62c448712412dc38932a, type: 3}
       propertyPath: scareValue
@@ -28128,10 +28212,10 @@ MonoBehaviour:
   navPoints:
   - {fileID: 829920812}
   - {fileID: 605610657}
+  isMoving: 0
   playSound: {fileID: 1460975762}
   startColor: {r: 255, g: 153, b: 153, a: 1}
   endColor: {r: 1, g: 1, b: 1, a: 1}
-  isMoving: 0
   direction: 1
 --- !u!1 &1806390967
 GameObject:
@@ -29096,8 +29180,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
+      propertyPath: playSound
+      value: 
+      objectReference: {fileID: 45442997}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
 --- !u!4 &1872082720 stripped
@@ -29120,10 +29208,10 @@ MonoBehaviour:
   successLimit: 30
   failedLimit: 31
   navPoints: []
+  isMoving: 0
   playSound: {fileID: 45442997}
   startColor: {r: 255, g: 153, b: 153, a: 1}
   endColor: {r: 1, g: 1, b: 1, a: 1}
-  isMoving: 0
   direction: 1
 --- !u!1 &1876946693
 GameObject:
@@ -29458,7 +29546,7 @@ PrefabInstance:
       objectReference: {fileID: 2000878611}
     - target: {fileID: 4583745570999332604, guid: 203accac57ad62c448712412dc38932a, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7090815889442360986, guid: 203accac57ad62c448712412dc38932a, type: 3}
       propertyPath: scareValue
@@ -29599,10 +29687,10 @@ MonoBehaviour:
   navPoints:
   - {fileID: 973765862}
   - {fileID: 1886968688}
+  isMoving: 0
   playSound: {fileID: 1033289165}
   startColor: {r: 255, g: 153, b: 153, a: 1}
   endColor: {r: 1, g: 1, b: 1, a: 1}
-  isMoving: 0
   direction: 1
 --- !u!1 &1901664672
 GameObject:
@@ -32205,8 +32293,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
+      propertyPath: playSound
+      value: 
+      objectReference: {fileID: 929924397}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
 --- !u!4 &2074732356 stripped
@@ -32229,10 +32321,10 @@ MonoBehaviour:
   successLimit: 30
   failedLimit: 31
   navPoints: []
+  isMoving: 0
   playSound: {fileID: 929924397}
   startColor: {r: 255, g: 153, b: 153, a: 1}
   endColor: {r: 1, g: 1, b: 1, a: 1}
-  isMoving: 0
   direction: 1
 --- !u!1 &2082088198
 GameObject:
@@ -32348,7 +32440,7 @@ PrefabInstance:
       objectReference: {fileID: 1431225293}
     - target: {fileID: 4583745570999332604, guid: 203accac57ad62c448712412dc38932a, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7090815889442360986, guid: 203accac57ad62c448712412dc38932a, type: 3}
       propertyPath: scareValue
@@ -33067,8 +33159,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8713622370951520493, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
+      propertyPath: playSound
+      value: 
+      objectReference: {fileID: 1223200099}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd4780cea19b90f499bfcc9004429169, type: 3}
 --- !u!4 &2107787823 stripped
@@ -33091,10 +33187,10 @@ MonoBehaviour:
   successLimit: 30
   failedLimit: 31
   navPoints: []
+  isMoving: 0
   playSound: {fileID: 1223200099}
   startColor: {r: 255, g: 153, b: 153, a: 1}
   endColor: {r: 1, g: 1, b: 1, a: 1}
-  isMoving: 0
   direction: 1
 --- !u!1 &2120984777
 GameObject:
@@ -33782,6 +33878,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 976709419}
     m_Modifications:
+    - target: {fileID: 6943516238340241205, guid: 2940ceb801b6db14b8e977873bebb079, type: 3}
+      propertyPath: isMoving
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943516238340241205, guid: 2940ceb801b6db14b8e977873bebb079, type: 3}
+      propertyPath: navPoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943516238340241205, guid: 2940ceb801b6db14b8e977873bebb079, type: 3}
+      propertyPath: navPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 953129244}
+    - target: {fileID: 6943516238340241205, guid: 2940ceb801b6db14b8e977873bebb079, type: 3}
+      propertyPath: navPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1947983495}
     - target: {fileID: 7524830241829042022, guid: 2940ceb801b6db14b8e977873bebb079, type: 3}
       propertyPath: point1
       value: 
