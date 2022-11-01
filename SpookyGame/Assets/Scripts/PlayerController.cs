@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     bool possessing;
 
     private PlayerInput playerInput;
+    private GameObject interactiveRef;
     private InputAction InteractAction;
     private InputAction WhisperAction;
 
@@ -193,6 +194,8 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("NPC"))
         {
             OnWhisper();
+            interactiveRef = collision.gameObject;
+            interactiveRef.GetComponent<DialogueTrigger>().TriggerDialogue();
         }
     }
 
@@ -219,6 +222,11 @@ public class PlayerController : MonoBehaviour
         if (collision.tag == "Room" && possessing == true)
         {
             transform.position = collision.gameObject.transform.position;
+        }
+
+        if (collision.gameObject.CompareTag("NPC"))
+        {
+            FindObjectOfType<DialogueManager>().EndDialogue();
         }
     }
 
