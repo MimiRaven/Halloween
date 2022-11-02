@@ -18,11 +18,11 @@ public class Progress : MonoBehaviour
 
     void Start()
     {
-        originalSize = mask.rectTransform.rect.height;
+        originalSize = mask.rectTransform.rect.width;
     }
 
     public void SetValue(float value)
     {
-        mask.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, originalSize * manager.score);
+        mask.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, originalSize * manager.score);
     }
 }
