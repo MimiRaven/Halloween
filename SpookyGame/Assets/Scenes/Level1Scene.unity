@@ -30174,7 +30174,7 @@ RectTransform:
   m_AnchorMin: {x: 0.07835518, y: 0.46224093}
   m_AnchorMax: {x: 0.9166449, y: 0.7263193}
   m_AnchoredPosition: {x: 0.18408203, y: 1.0146046}
-  m_SizeDelta: {x: -0.18408, y: 0.8294}
+  m_SizeDelta: {x: -226.1014, y: 0.8294}
   m_Pivot: {x: -0.00000004749745, y: 0.49999994}
 --- !u!114 &1906942055
 MonoBehaviour:
@@ -31412,7 +31412,7 @@ GameObject:
   - component: {fileID: 1994817245}
   - component: {fileID: 1994817244}
   m_Layer: 5
-  m_Name: ScareMeter
+  m_Name: Progress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34072,7 +34072,7 @@ PrefabInstance:
     - target: {fileID: 8458200902731173862, guid: 99457fa918eecd64c95f21051e747ac9, type: 3}
       propertyPath: progress
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1994817244}
     - target: {fileID: 8458200902731173862, guid: 99457fa918eecd64c95f21051e747ac9, type: 3}
       propertyPath: winTotal
       value: 100
