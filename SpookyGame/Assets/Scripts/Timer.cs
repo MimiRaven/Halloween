@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Timer : MonoBehaviour
 {
@@ -18,7 +20,7 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameManager g = gameManager.GetComponent<GameManager>();
+        //GameManager g = gameManager.GetComponent<GameManager>();
         
         DisplayTime(timeValue);
         if (timeValue > 0)
@@ -27,10 +29,44 @@ public class Timer : MonoBehaviour
         }
         else
         {
+            TimerEnd();
             timeValue = 0;
             TimerOn = false;
-            g.TimerEnd();
         }
+    }
+
+    public void TimerEnd()
+    {
+        GameObject g = GameObject.FindGameObjectWithTag("GameManager");
+        GameManager game = g.GetComponent<GameManager>();
+
+        if (SceneManager.GetActiveScene().name == "Level1Scene")
+        {
+            if (game.score >= game.winTotal)
+            {
+                SceneManager.LoadScene("Level2Scene");
+            }
+
+            if (game.score < game.winTotal)
+            {
+                SceneManager.LoadScene("Lose Screen");
+            }
+        }
+
+        else if (SceneManager.GetActiveScene().name == "Level2Scene")
+        {
+            if (game.score >= game.winTotal)
+            {
+                SceneManager.LoadScene("Win Screen");
+            }
+
+            if (game.score < game.winTotal)
+            {
+                SceneManager.LoadScene("Lose Screen");
+            }
+        }
+
+        
     }
 
     void DisplayTime(float timetoDisplay)

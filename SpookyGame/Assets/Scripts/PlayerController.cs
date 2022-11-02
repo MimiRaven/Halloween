@@ -73,7 +73,6 @@ public class PlayerController : MonoBehaviour
         
         absVelocity = Mathf.Abs(rb2d.velocity.x);
         theVelocity = new Vector2(Mathf.Abs(rb2d.velocity.x), Mathf.Abs(rb2d.velocity.y));
-        Debug.Log(theVelocity.x);
 
         animator.SetFloat("Move X", rb2d.velocity.x);
         animator.SetFloat("Speed", absVelocity);

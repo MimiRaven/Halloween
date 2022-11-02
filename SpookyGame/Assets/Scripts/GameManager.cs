@@ -40,29 +40,36 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
-        if (totalScares == endGameTotal && score >= winTotal)
+        if (SceneManager.GetActiveScene().name == "Level1Scene")
         {
-            SceneManager.LoadScene("Win Screen");
+            if (totalScares == endGameTotal && score >= winTotal)
+            {
+                SceneManager.LoadScene("Level2Scene");
+            }
+
+            else if (totalScares == endGameTotal && score < winTotal)
+            {
+                SceneManager.LoadScene("Lose Screen");
+            }
         }
 
-        else if (totalScares == endGameTotal && score < winTotal)
+        else if (SceneManager.GetActiveScene().name == "Level2Scene")
         {
-            SceneManager.LoadScene("Lose Screen");
+            if (totalScares == endGameTotal && score >= winTotal)
+            {
+                SceneManager.LoadScene("Win Screen");
+            }
+
+            else if (totalScares == endGameTotal && score < winTotal)
+            {
+                SceneManager.LoadScene("Lose Screen");
+            }
         }
+
+        
     }
 
-    public void TimerEnd()
-    {
-        if (score >= winTotal)
-        {
-            SceneManager.LoadScene("Win Screen");
-        }
 
-        if (score < winTotal)
-        {
-            SceneManager.LoadScene("Lose Screen");
-        }
-    }
 
     public void YouLose()
     {
