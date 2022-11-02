@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: yellowChair
+  m_Name: blueBedPossessed
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,11 +20,11 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -1095543224, guid: ac4cadaf18cee7b4da46a26ff855f571, type: 3}
+      value: {fileID: 2033395754, guid: 50ee1b0893297954ba90c80958bf4ef7, type: 3}
     - time: 0.083333336
-      value: {fileID: 927181135, guid: ac4cadaf18cee7b4da46a26ff855f571, type: 3}
+      value: {fileID: 1179509585, guid: 50ee1b0893297954ba90c80958bf4ef7, type: 3}
     - time: 0.16666667
-      value: {fileID: 280882177, guid: ac4cadaf18cee7b4da46a26ff855f571, type: 3}
+      value: {fileID: -687467939, guid: 50ee1b0893297954ba90c80958bf4ef7, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,9 +44,9 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -1095543224, guid: ac4cadaf18cee7b4da46a26ff855f571, type: 3}
-    - {fileID: 927181135, guid: ac4cadaf18cee7b4da46a26ff855f571, type: 3}
-    - {fileID: 280882177, guid: ac4cadaf18cee7b4da46a26ff855f571, type: 3}
+    - {fileID: 2033395754, guid: 50ee1b0893297954ba90c80958bf4ef7, type: 3}
+    - {fileID: 1179509585, guid: 50ee1b0893297954ba90c80958bf4ef7, type: 3}
+    - {fileID: -687467939, guid: 50ee1b0893297954ba90c80958bf4ef7, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
