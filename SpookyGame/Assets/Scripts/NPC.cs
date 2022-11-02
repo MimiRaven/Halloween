@@ -25,14 +25,14 @@ public class NPC : MonoBehaviour
     NavState navState;
     float destinationCooldownTimer = 3f;
     bool destinationCooldown;
-    //internal Animator animator;
+    internal Animator animator;
     public int direction = -1;
 
     void Start()
     {
         ren = GetComponent<SpriteRenderer>();
         agent = GetComponent<NavMeshAgent>();
-        //animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
 
         agent.updateRotation = false;
         agent.updateUpAxis = false;
@@ -56,7 +56,7 @@ public class NPC : MonoBehaviour
         
         if (canScare == true)
         {
-            //animator.SetTrigger("Scared");
+            animator.SetTrigger("Scared");
             g.ScareScore(x);
             playSound.Play();
         }
@@ -77,7 +77,7 @@ public class NPC : MonoBehaviour
             transform.eulerAngles = Vector3.forward * 90;
             agent.isStopped = true;
             canScare = false;
-            //animator.SetTrigger("Death");
+            animator.SetTrigger("Death");
             g.ScareScore(-scareMeter);
             NPCStates();
             npcState = NPCState.failScared;
