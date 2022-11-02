@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
 
     public enum Possess {lightState, objState }
     public Possess possessState;
+
     private void Awake()
     {
         Time.timeScale = 1;
@@ -298,6 +299,7 @@ public class PlayerController : MonoBehaviour
         ScareRadius s = l.scareRadius.GetComponent<ScareRadius>();
 
         speed = 0;
+
         enableMove = false;
         s.ScareNPC();
         l.FlickerLightOn();

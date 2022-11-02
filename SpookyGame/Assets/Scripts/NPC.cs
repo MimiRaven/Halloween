@@ -74,7 +74,7 @@ public class NPC : MonoBehaviour
 
         if (scareMeter >= failedLimit && canScare == true)
         {
-            transform.eulerAngles = Vector3.forward * 90;
+            //transform.eulerAngles = Vector3.forward * 90;
             agent.isStopped = true;
             canScare = false;
             animator.SetTrigger("Death");
@@ -111,14 +111,14 @@ public class NPC : MonoBehaviour
         {
             navState = NavState.point1;
             destinationCooldown = true;
-            //animator.SetFloat("Speed", agent.velocity.magnitude);
+            animator.SetFloat("Speed", agent.velocity.magnitude);
         }
 
         if (Mathf.Approximately(transform.position.x, navPoints[1].transform.position.x) && navState == NavState.point1)
         {
             navState = NavState.point0;
             destinationCooldown = true;
-            //animator.SetFloat("Speed", agent.velocity.magnitude);
+            animator.SetFloat("Speed", agent.velocity.magnitude);
         }
 
         switch (navState)
@@ -128,8 +128,8 @@ public class NPC : MonoBehaviour
                     if (destinationCooldown == false)
                     {
                         agent.SetDestination(navPoints[0].transform.position);
-                        //animator.SetFloat("Move X", direction);
-                        //animator.SetFloat("Speed", agent.velocity.magnitude);
+                        animator.SetFloat("Move X", direction);
+                        animator.SetFloat("Speed", agent.velocity.magnitude);
                     }
                 }
                 break;
@@ -139,8 +139,8 @@ public class NPC : MonoBehaviour
                     if (destinationCooldown == false)
                     {
                         agent.SetDestination(navPoints[1].transform.position);
-                        //animator.SetFloat("Move X", -direction);
-                        //animator.SetFloat("Speed", agent.velocity.magnitude);
+                        animator.SetFloat("Move X", -direction);
+                        animator.SetFloat("Speed", agent.velocity.magnitude);
                     }
                 }
                 break;
@@ -148,8 +148,8 @@ public class NPC : MonoBehaviour
             case NavState.dead:
                 {
                     isMoving = false;
-                    //animator.SetTrigger("Death");
-                    //animator.SetFloat("Speed", agent.velocity.magnitude);                 
+                    animator.SetTrigger("Death");
+                    animator.SetFloat("Speed", agent.velocity.magnitude);                 
                 }
                 break;
         }
