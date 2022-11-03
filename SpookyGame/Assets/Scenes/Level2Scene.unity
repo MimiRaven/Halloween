@@ -1888,7 +1888,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.73333335, g: 0.6392157, b: 0.59607846, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.73333335, g: 0.6392157, b: 0.59607846, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -2288,7 +2288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8854396067965394542, guid: 5887a42bdcdf63742bf6560bd0f62c16, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.636284
+      value: 28.18
       objectReference: {fileID: 0}
     - target: {fileID: 8854396067965394542, guid: 5887a42bdcdf63742bf6560bd0f62c16, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9718,6 +9718,10 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4278190080
       objectReference: {fileID: 0}
+    - target: {fileID: 7383071140737231711, guid: 6b32702608eb1064c9d54d61cbdb99b6, type: 3}
+      propertyPath: m_FirstSelected
+      value: 
+      objectReference: {fileID: 1433202040}
     - target: {fileID: 7383071141138027562, guid: 6b32702608eb1064c9d54d61cbdb99b6, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -13752,7 +13756,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimerOn: 0
-  timeValue: 180
+  timeValue: 120
   timeText: {fileID: 1095312418}
   gameManager: {fileID: 1404710497}
 --- !u!114 &1095312418
@@ -19177,9 +19181,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.73333335, g: 0.6392157, b: 0.59607846, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.73333335, g: 0.6392157, b: 0.59607846, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1

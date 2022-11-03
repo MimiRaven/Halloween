@@ -42,11 +42,6 @@ public class Timer : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "Level1Scene")
         {
-            if (game.score >= game.winTotal)
-            {
-                SceneManager.LoadScene("Level2Scene");
-            }
-
             if (game.score < game.winTotal)
             {
                 SceneManager.LoadScene("Lose Screen");
@@ -55,18 +50,11 @@ public class Timer : MonoBehaviour
 
         else if (SceneManager.GetActiveScene().name == "Level2Scene")
         {
-            if (game.score >= game.winTotal)
-            {
-                SceneManager.LoadScene("Win Screen");
-            }
-
             if (game.score < game.winTotal)
             {
                 SceneManager.LoadScene("Lose Screen");
             }
         }
-
-        
     }
 
     void DisplayTime(float timetoDisplay)

@@ -28,7 +28,6 @@ public class GameManager : MonoBehaviour
     public void Scared(int x) 
     {
         totalScares += x;
-        EndGame();
     }
 
     public void ScareScore(float x)
@@ -36,40 +35,27 @@ public class GameManager : MonoBehaviour
         score += x;
         scoreText.text = "" + score.ToString();
         progress.SetValue(score);
+        EndGame();
     }
 
     public void EndGame()
     {
         if (SceneManager.GetActiveScene().name == "Level1Scene")
         {
-            if (totalScares == endGameTotal && score >= winTotal)
+            if (score >= winTotal)
             {
                 SceneManager.LoadScene("Level2Scene");
-            }
-
-            else if (totalScares == endGameTotal && score < winTotal)
-            {
-                SceneManager.LoadScene("Lose Screen");
             }
         }
 
         else if (SceneManager.GetActiveScene().name == "Level2Scene")
         {
-            if (totalScares == endGameTotal && score >= winTotal)
+            if (score >= winTotal)
             {
                 SceneManager.LoadScene("Win Screen");
             }
-
-            else if (totalScares == endGameTotal && score < winTotal)
-            {
-                SceneManager.LoadScene("Lose Screen");
-            }
-        }
-
-        
+        }  
     }
-
-
 
     public void YouLose()
     {
